@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 11 / THE EDIT</title>
+<title>@4t_jagga — DAY 12 / THE DROP</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.05),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.06),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,38 +24,38 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{margin-bottom:26px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:0.9;}
+.hero{text-align:center;margin-bottom:30px;}
+.hero .drop-tag{font-size:9px;letter-spacing:5px;color:#D4AF37;text-transform:uppercase;border:1px solid #D4AF37;display:inline-block;padding:6px 14px;margin-bottom:18px;background:rgba(212,175,55,0.06);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,7vw,72px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;}
-@media(max-width:750px){.services{grid-template-columns:1fr;}}
-.s-card{border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.01);padding:18px;transition:0.3s;position:relative;overflow:hidden;}
-.s-card:hover{border-color:rgba(212,175,55,0.3);transform:translateY(-2px);}
-.s-card.gold{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.1),rgba(212,175,55,0.02));}
-.s-card .tag{font-size:8px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;margin-bottom:10px;}
-.s-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:8px;}
-.s-card p{font-size:10px;line-height:1.6;color:rgba(245,242,237,0.4);font-weight:200;margin-bottom:12px;}
-.s-card .price{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;}
-.edit-bar{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
-.edit-bar span{border:1px solid rgba(255,255,255,0.08);padding:8px 14px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,242,237,0.4);background:rgba(255,255,255,0.01);}
-.edit-bar span.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,0.06);}
-.cta{display:grid;grid-template-columns:1.2fr 0.8fr;gap:12px;margin-bottom:26px;}
-@media(max-width:750px){.cta{grid-template-columns:1fr;}}
-.cta-box{border:1px solid rgba(212,175,55,0.18);background:linear-gradient(180deg,rgba(212,175,55,0.06),rgba(0,0,0,0.2));padding:20px;}
-.cta-box h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:8px;}
-.cta-box p{font-size:11px;color:rgba(245,242,237,0.4);line-height:1.7;font-weight:200;margin-bottom:14px;}
-.btns{display:flex;gap:10px;flex-wrap:wrap;}
-.btn{border:1px solid #D4AF37;padding:10px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;}
-.btn-gold{background:#D4AF37;color:#000;}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px auto;max-width:520px;}
+@media(max-width:600px){.count{grid-template-columns:repeat(2,1fr);}}
+.c-box{border:1px solid rgba(212,175,55,0.18);background:linear-gradient(180deg,rgba(212,175,55,0.06),rgba(0,0,0,0.2));padding:18px 10px;text-align:center;position:relative;}
+.c-box::after{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:#D4AF37;opacity:0.5;}
+.c-box .n{font-family:'Cormorant Garamond',serif;font-size:36px;color:#D4AF37;line-height:1;}
+.c-box .l{font-size:8px;letter-spacing:3px;opacity:0.4;text-transform:uppercase;margin-top:8px;}
+.drop-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:14px;margin-bottom:26px;}
+@media(max-width:800px){.drop-grid{grid-template-columns:1fr;}}
+.main-drop{border:1px solid #D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.1),rgba(212,175,55,0.02));padding:22px;position:relative;overflow:hidden;}
+.main-drop::before{content:'';position:absolute;inset:8px;border:1px solid rgba(212,175,55,0.12);pointer-events:none;}
+.main-drop .tag{font-size:8px;letter-spacing:4px;color:#D4AF37;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.main-drop .tag i{width:6px;height:6px;background:#D4AF37;border-radius:50%;box-shadow:0 0 8px #D4AF37;animation:blink 1.5s infinite;display:inline-block;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.main-drop h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.1;margin-bottom:10px;}
+.main-drop p{font-size:11px;line-height:1.7;color:rgba(245,242,237,0.45);font-weight:200;margin-bottom:16px;}
+.progress{height:2px;background:rgba(255,255,255,0.06);position:relative;margin-bottom:14px;}
+.progress i{position:absolute;left:0;top:0;height:100%;width:40%;background:#D4AF37;box-shadow:0 0 10px #D4AF37;}
+.side{display:flex;flex-direction:column;gap:12px;}
+.side-card{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:16px;}
+.side-card .k{font-size:8px;letter-spacing:3px;opacity:0.35;text-transform:uppercase;margin-bottom:8px;}
+.side-card .v{font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.4;}
+.btn{border:1px solid #D4AF37;padding:12px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;justify-content:center;}
+.btn-gold{background:#D4AF37;color:#000;width:100%;}
 .btn-gold:hover{background:#E8C766;}
-.btn-ghost{color:#D4AF37;background:transparent;}
+.btn-ghost{color:#D4AF37;background:transparent;width:100%;}
 .btn-ghost:hover{background:rgba(212,175,55,0.08);}
-.stats{display:flex;gap:12px;flex-wrap:wrap;}
-.stat{border:1px solid rgba(255,255,255,0.06);padding:12px 14px;background:rgba(255,255,255,0.01);min-width:100px;}
-.stat .k{font-size:8px;letter-spacing:3px;color:rgba(245,242,237,0.3);text-transform:uppercase;margin-bottom:6px;}
-.stat .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:36.6%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.bar i{position:absolute;left:0;top:0;height:100%;width:40%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
@@ -71,7 +71,7 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 <body>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — THE EDIT — DAY 11 / 30 — CLIENT READY</div>
+<div class="top-left">@4t_jagga — THE DROP — DAY 12 / 30 — LIMITED</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
@@ -79,67 +79,56 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 </div>
 
 <div class="hero">
-<h1>Now <em>open</em> for business.</h1>
-<p style="margin-top:12px;max-width:560px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">11 days building in public from Lahore. The portfolio is live, the signal is strong. If you need this energy for your brand — DM.</p>
-</div>
-
-<div class="edit-bar">
-<span class="active">● Editing Live</span><span>Portfolio Mode</span><span>Client Ready</span><span>Lahore — PKT</span>
-</div>
-
-<div class="services">
-<div class="s-card gold">
-<div class="tag">Most Requested</div>
-<h3>Luxury Landing</h3>
-<p>One-page empire like my30dayweb. Cormorant + gold + astro. Built in Spck, shipped same day.</p>
-<div class="price">$150 — 24h Delivery</div>
-</div>
-<div class="s-card">
-<div class="tag">Signature</div>
-<h3>Astro Brand Site</h3>
-<p>Watch / orbit / time — tumhari Day 04-10 jaisi luxury motion site. Premium feel.</p>
-<div class="price">$250 — 48h</div>
-</div>
-<div class="s-card">
-<div class="tag">Full Atelier</div>
-<h3>30-Day System</h3>
-<p>Poora map, vault, signal — jo main bana raha hu wahi tumhare brand ke liye. Daily drops.</p>
-<div class="price">$500 — 7 Days</div>
+<div class="drop-tag">● DROP 012 — LIVE — 40% EMPIRE</div>
+<h1>Next <em>Drop</em> Loading.</h1>
+<p style="margin-top:12px;font-size:11px;color:rgba(245,242,237,0.4);letter-spacing:2px;text-transform:uppercase;">12 Days Built — No Zero Days — Lahore</p>
+<div class="count">
+<div class="c-box"><div class="n" id="cdH">23</div><div class="l">Hours</div></div>
+<div class="c-box"><div class="n" id="cdM">59</div><div class="l">Minutes</div></div>
+<div class="c-box"><div class="n" id="cdS">59</div><div class="l">Seconds</div></div>
+<div class="c-box"><div class="n">012</div><div class="l">Drop No</div></div>
 </div>
 </div>
 
-<div class="cta">
-<div class="cta-box">
-<h4>Work with @4t_jagga</h4>
-<p>11/30 empire built live. No agency. Direct from Lahore. You saw the whole journey — now get your own. DM on Instagram, I reply in hours.</p>
-<div class="btns">
-<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Instagram DM ↗</a>
-<a class="btn btn-ghost" href="https://my30dayweb.vercel.app" target="_blank" rel="noopener">View Live Proof</a>
+<div class="drop-grid">
+<div class="main-drop">
+<div class="tag"><i></i> CURRENT DROP — DAY 12</div>
+<h3>THE DROP — Limited Access</h3>
+<p>12/30 complete. 40% empire built from Lahore, PK. Next drop: <b style="color:#D4AF37;">THE STUDIO</b> — full behind-the-scenes of how every site is forged in Spck. Only early followers get it first.</p>
+<div class="progress"><i></i></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Get Early Access — IG ↗</a>
 </div>
 </div>
-<div class="stats">
-<div class="stat"><div class="k">Days Built</div><div class="v">11 / 30</div></div>
-<div class="stat"><div class="k">Progress</div><div class="v">36.6%</div></div>
-<div class="stat"><div class="k">Location</div><div class="v">Lahore</div></div>
-<div class="stat"><div class="k">Status</div><div class="v">Open</div></div>
-<div class="stat"><div class="k">Response</div><div class="v">&lt; 3h</div></div>
-<div class="stat"><div class="k">Proof</div><div class="v">Live</div></div>
+<div class="side">
+<div class="side-card">
+<div class="k">Drop List</div>
+<div class="v">012 / 030 — 40%<br><span style="font-family:'Manrope',sans-serif;font-size:10px;color:rgba(245,242,237,0.4);">Lahore — PKT — 12 days straight</span></div>
+</div>
+<div class="side-card">
+<div class="k">Next Up</div>
+<div class="v" style="color:#D4AF37;">DAY 13 — THE STUDIO<br><span style="font-family:'Manrope',sans-serif;font-size:10px;color:rgba(245,242,237,0.4);">Behind the forge</span></div>
+</div>
+<div class="side-card" style="border-color:rgba(212,175,55,0.15);background:rgba(212,175,55,0.04);">
+<div class="k">Follow Signal</div>
+<div class="v" style="font-size:12px;"><a href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" style="color:#D4AF37;text-decoration:none;">@4t_jagga ↗</a> — DM for drop</div>
+</div>
 </div>
 </div>
 
 <div class="bar"><i></i></div>
 <div class="vault">
-<div class="card done"><div class="num">DAY 07</div><h3>Week 1</h3></div>
 <div class="card done"><div class="num">DAY 08</div><h3>Map</h3></div>
 <div class="card done"><div class="num">DAY 09</div><h3>Signal</h3></div>
 <div class="card done"><div class="num">DAY 10</div><h3>Archive</h3></div>
-<div class="card active"><div class="num">DAY 11</div><h3>Edit</h3></div>
-<div class="card locked"><div class="num">DAY 12</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 11</div><h3>Edit</h3></div>
+<div class="card active"><div class="num">DAY 12</div><h3>Drop</h3></div>
+<div class="card locked"><div class="num">DAY 13</div><h3>Studio</h3></div>
 <div class="card locked"><div class="num">DAY 15</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
-<div class="bottom"><span>EST. LAHORE 2026 — 36.6% — NOW OPEN FOR CLIENTS</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — 40% DROPPED — LIMITED ACCESS</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
@@ -154,6 +143,18 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
+function countdown(){
+const now=new Date();
+const pk=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
+const tomorrow=new Date(pk); tomorrow.setDate(tomorrow.getDate()+1); tomorrow.setHours(0,0,0,0);
+let diff=tomorrow-pk;
+if(diff<0) diff+=86400000;
+const h=Math.floor(diff/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+document.getElementById('cdH').textContent=String(h).padStart(2,'0');
+document.getElementById('cdM').textContent=String(m).padStart(2,'0');
+document.getElementById('cdS').textContent=String(s).padStart(2,'0');
+}
+setInterval(countdown,1000);countdown();
 </script>
 </body>
 </html>
