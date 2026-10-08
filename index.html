@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 09 / THE SIGNAL</title>
+<title>@4t_jagga — DAY 10 / THE ARCHIVE</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(15,40,80,0.18),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.06),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,36 +24,39 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{margin-bottom:28px;}
+.hero{display:grid;grid-template-columns:1fr 180px;gap:20px;align-items:center;margin-bottom:28px;}
+@media(max-width:800px){.hero{grid-template-columns:1fr;}}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,58px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.signal-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:16px;margin-bottom:28px;}
-@media(max-width:800px){.signal-grid{grid-template-columns:1fr;}}
-.console{border:1px solid rgba(212,175,55,0.18);background:linear-gradient(180deg,rgba(212,175,55,0.05),rgba(0,0,0,0.2));padding:22px;position:relative;}
-.console::before{content:'';position:absolute;top:0;left:22px;right:22px;height:1px;background:linear-gradient(to right,transparent,#D4AF37,transparent);opacity:0.4;}
-.c-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
-.c-title{font-size:9px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;}
-.live{display:flex;align-items:center;gap:6px;font-size:9px;letter-spacing:2px;color:#D4AF37;}
-.live i{width:6px;height:6px;background:#D4AF37;border-radius:50%;box-shadow:0 0 8px #D4AF37;animation:blink 1.5s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.wave{display:flex;align-items:end;gap:3px;height:42px;margin-bottom:18px;}
-.wave b{width:3px;background:#D4AF37;display:block;border-radius:2px;animation:wave 0.8s infinite ease-in-out;}
-@keyframes wave{0%,100%{height:8px;opacity:0.4}50%{height:38px;opacity:1}}
-.msg{border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.3);padding:14px;font-size:11px;line-height:1.7;color:rgba(245,242,237,0.5);font-weight:200;min-height:88px;}
-.msg b{color:#D4AF37;font-weight:400;}
-.cursor{display:inline-block;width:8px;height:12px;background:#D4AF37;margin-left:2px;animation:blink 1s infinite;vertical-align:middle;}
-.links{display:flex;flex-direction:column;gap:12px;}
-.link-card{border:1px solid rgba(255,255,255,0.07);padding:18px;background:rgba(255,255,255,0.01);display:flex;justify-content:space-between;align-items:center;transition:0.3s;text-decoration:none;color:inherit;}
-.link-card:hover{border-color:rgba(212,175,55,0.4);background:rgba(212,175,55,0.04);}
-.link-card.gold{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.03));box-shadow:0 0 20px rgba(212,175,55,0.15);}
-.link-card .l{font-size:10px;letter-spacing:3px;opacity:0.4;text-transform:uppercase;margin-bottom:6px;}
-.link-card .v{font-family:'Cormorant Garamond',serif;font-size:16px;}
-.link-card .arrow{color:#D4AF37;font-size:18px;}
-.freq{border:1px solid rgba(212,175,55,0.12);padding:16px;margin-top:12px;background:rgba(212,175,55,0.03);}
-.freq .k{font-size:8px;letter-spacing:3px;color:rgba(245,242,237,0.3);text-transform:uppercase;margin-bottom:8px;}
-.freq .num{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;letter-spacing:2px;}
+.hero h1 i{font-style:normal;color:rgba(245,242,237,0.2);font-size:0.5em;vertical-align:super;}
+.big10{border:1px solid #D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));padding:18px;text-align:center;position:relative;}
+.big10::before{content:'';position:absolute;inset:6px;border:1px solid rgba(212,175,55,0.15);pointer-events:none;}
+.big10 .n{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:#D4AF37;line-height:0.9;}
+.big10 .l{font-size:9px;letter-spacing:4px;color:#D4AF37;margin-top:8px;text-transform:uppercase;}
+
+.archive{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;}
+@media(max-width:700px){.archive{grid-template-columns:1fr;}}
+.a-item{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:16px;display:flex;gap:14px;align-items:center;transition:0.3s;}
+.a-item:hover{border-color:rgba(212,175,55,0.2);background:rgba(212,175,55,0.02);}
+.a-item.done{border-color:rgba(212,175,55,0.15);}
+.a-item.active{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));box-shadow:0 0 20px rgba(212,175,55,0.1);}
+.a-num{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(245,242,237,0.5);}
+.a-item.done .a-num{background:#D4AF37;color:#000;border-color:#D4AF37;}
+.a-item.active .a-num{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,0.1);}
+.a-info b{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;display:block;}
+.a-info span{font-size:9px;letter-spacing:2px;opacity:0.35;text-transform:uppercase;}
+.a-info i{font-style:normal;font-size:10px;color:#D4AF37;margin-left:6px;}
+
+.signal{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
+.signal a{flex:1;min-width:160px;border:1px solid rgba(255,255,255,0.07);padding:14px 16px;background:rgba(255,255,255,0.01);display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:inherit;transition:0.3s;}
+.signal a:hover{border-color:rgba(212,175,55,0.4);}
+.signal a.gold{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));}
+.signal .k{font-size:9px;letter-spacing:3px;opacity:0.4;text-transform:uppercase;}
+.signal .v{font-family:'Cormorant Garamond',serif;font-size:14px;margin-top:4px;}
+.signal .ar{color:#D4AF37;}
+
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:30%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.bar i{position:absolute;left:0;top:0;height:100%;width:33.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
@@ -62,14 +65,14 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .card.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,0.15);}
 .card.done{opacity:0.45;}
 .card.locked{opacity:0.18;}
-.bottom{display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
+.bottom{display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;flex-wrap:wrap;gap:8px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;opacity:1;text-transform:none;letter-spacing:0;font-style:italic;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — THE SIGNAL — DAY 09 / 30</div>
+<div class="top-left">@4t_jagga — THE ARCHIVE — DAY 10 / 30 — DOUBLE DIGITS</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
@@ -77,34 +80,30 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 </div>
 
 <div class="hero">
-<h1>The <em>Signal</em> is live.</h1>
-<p style="margin-top:12px;max-width:520px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Broadcasting from Lahore, PK. 9 days no zero days. If you receive this, you are early.</p>
+<div>
+<h1>The <em>Archive</em> — <i>10/30</i></h1>
+<p style="margin-top:14px;max-width:480px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Double digits unlocked. Ten days, no zero days, from Lahore. Every drop sealed in gold. 33.3% empire complete.</p>
+</div>
+<div class="big10"><div class="n">10</div><div class="l">Days — Archive<br>33.3% Built</div></div>
 </div>
 
-<div class="signal-grid">
-<div class="console">
-<div class="c-head"><div class="c-title">Console — @4t_jagga — 31.5204° N, 74.3587° E</div><div class="live"><i></i> LIVE</div></div>
-<div class="wave" id="wave"></div>
-<div class="msg" id="typeMsg"></div>
+<div class="archive">
+<div class="a-item done"><div class="a-num">01</div><div class="a-info"><b>Landing <i>✓</i></b><span>Day 01 — Idea Born</span></div></div>
+<div class="a-item done"><div class="a-num">02</div><div class="a-info"><b>The Code <i>✓</i></b><span>Day 02 — System</span></div></div>
+<div class="a-item done"><div class="a-num">03</div><div class="a-info"><b>Execution <i>✓</i></b><span>Day 03 — Ship</span></div></div>
+<div class="a-item done"><div class="a-num">04</div><div class="a-info"><b>Golden Hour <i>✓</i></b><span>Day 04 — Luxury</span></div></div>
+<div class="a-item done"><div class="a-num">05</div><div class="a-info"><b>Astronomia <i>✓</i></b><span>Day 05 — Planets</span></div></div>
+<div class="a-item done"><div class="a-num">06</div><div class="a-info"><b>Atelier <i>✓</i></b><span>Day 06 — Vault</span></div></div>
+<div class="a-item done"><div class="a-num">07</div><div class="a-info"><b>Week One <i>★</i></b><span>Day 07 — Gold Seal</span></div></div>
+<div class="a-item done"><div class="a-num">08</div><div class="a-info"><b>The Map <i>↗</i></b><span>Day 08 — Empire Map</span></div></div>
+<div class="a-item done"><div class="a-num">09</div><div class="a-info"><b>The Signal <i>📡</i></b><span>Day 09 — Live Broadcast</span></div></div>
+<div class="a-item active"><div class="a-num">10</div><div class="a-info"><b>The Archive <i>● LIVE</i></b><span>Day 10 — Double Digits</span></div></div>
 </div>
 
-<div class="links">
-<a class="link-card gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">
-<div><div class="l">Instagram — Follow</div><div class="v">@4t_jagga ↗</div></div><div class="arrow">★</div>
-</a>
-<a class="link-card" href="https://my30dayweb.vercel.app" target="_blank" rel="noopener">
-<div><div class="l">Archive</div><div class="v">my30dayweb.vercel.app</div></div><div class="arrow">↗</div>
-</a>
-<a class="link-card" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">
-<div><div class="l">Direct Message</div><div class="v">DM for Collab</div></div><div class="arrow">↗</div>
-</a>
-<div class="freq">
-<div class="k">Frequency / Signal Strength</div>
-<div class="num" id="freqNum">104.7 — PKT — 100%</div>
-<div style="margin-top:10px;height:1px;background:rgba(255,255,255,0.06);position:relative;"><i style="position:absolute;left:0;top:0;height:100%;width:100%;background:#D4AF37;"></i></div>
-<div style="margin-top:8px;font-size:10px;color:rgba(245,242,237,0.3);letter-spacing:1px;">EST. LAHORE 2026 — 9 DAYS BROADCASTING</div>
-</div>
-</div>
+<div class="signal">
+<a class="gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener"><div><div class="k">Instagram — Follow</div><div class="v">@4t_jagga</div></div><div class="ar">★</div></a>
+<a href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener"><div><div class="k">DM</div><div class="v">Collab</div></div><div class="ar">↗</div></a>
+<a href="https://my30dayweb.vercel.app" target="_blank" rel="noopener"><div><div class="k">Archive</div><div class="v">Live Site</div></div><div class="ar">↗</div></a>
 </div>
 
 <div class="bar"><i></i></div>
@@ -117,13 +116,13 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 <div class="card done"><div class="num">DAY 06</div><h3>Atelier</h3></div>
 <div class="card done"><div class="num">DAY 07</div><h3>Week 1</h3></div>
 <div class="card done"><div class="num">DAY 08</div><h3>Map</h3></div>
-<div class="card active"><div class="num">DAY 09</div><h3>Signal</h3></div>
-<div class="card locked"><div class="num">DAY 10</div><h3>Locked</h3></div>
-<div class="card locked"><div class="num">DAY 20</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 09</div><h3>Signal</h3></div>
+<div class="card active"><div class="num">DAY 10</div><h3>Archive</h3></div>
+<div class="card locked"><div class="num">DAY 11</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
-<div class="bottom"><span>EST. LAHORE 2026 — 30% SIGNAL — FOLLOW @4T_JAGGA</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — 33.3% ARCHIVED — DOUBLE DIGITS</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
@@ -138,12 +137,6 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
-const wave=document.getElementById('wave');
-for(let i=0;i<22;i++){const b=document.createElement('b');b.style.animationDelay=(i*0.06)+'s';b.style.height=(8+Math.random()*30)+'px';wave.appendChild(b);}
-const text=`> SYSTEM: Day 09 broadcasting...<br>> LOCATION: Lahore, PK<br>> STATUS: <b>9/30 days — 30% built — no zero days</b><br>> MESSAGE: If you're reading this, you're early. Empire is being built live.<br>> FOLLOW: <b>@4t_jagga on Instagram</b> — Link in signal →<br>> @4t_jagga`;
-let idx=0;const el=document.getElementById('typeMsg');
-function type(){if(idx<=text.length){el.innerHTML=text.slice(0,idx)+'<span class="cursor"></span>';idx++;setTimeout(type,18);}}setTimeout(type,400);
-setInterval(()=>{const f=(104.5+Math.random()*0.6).toFixed(1);document.getElementById('freqNum').textContent=`${f} — PKT — 100%`;},2000);
 </script>
 </body>
 </html>
