@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 13 / THE STUDIO</title>
+<title>@4t_jagga — DAY 14 / HALF MOON</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.05),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(120% 80% at 30% 10%,rgba(212,175,55,0.07),transparent 50%),radial-gradient(80% 60% at 80% 80%,rgba(100,120,200,0.04),transparent),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;position:relative;overflow:hidden;}
+.wrap::before{content:'🌙';position:absolute;top:18px;right:28px;font-size:22px;opacity:0.15;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,36 +25,35 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{margin-bottom:26px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:0.9;}
+.hero{text-align:center;margin-bottom:30px;position:relative;}
+.hero .moon{width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff8dc,#D4AF37 35%,#8a6d1b 70%,#2a1f05);margin:0 auto 18px;position:relative;box-shadow:0 0 50px rgba(212,175,55,0.3),inset -8px -8px 20px rgba(0,0,0,0.5);overflow:hidden;}
+.hero .moon::after{content:'';position:absolute;left:38%;top:0;width:62%;height:100%;background:#040508;border-radius:50%;opacity:0.9;}
+.hero .tag{font-size:9px;letter-spacing:5px;color:#D4AF37;text-transform:uppercase;border:1px solid rgba(212,175,55,0.2);display:inline-block;padding:6px 14px;margin-bottom:14px;background:rgba(212,175,55,0.05);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,7vw,68px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.studio{display:grid;grid-template-columns:1.2fr 0.8fr;gap:14px;margin-bottom:26px;}
-@media(max-width:800px){.studio{grid-template-columns:1fr;}}
-.screen{border:1px solid rgba(212,175,55,0.18);background:#080a0f;padding:0;position:relative;overflow:hidden;}
-.screen-head{height:36px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:rgba(255,255,255,0.02);}
-.dots{display:flex;gap:6px;}
-.dots i{width:8px;height:8px;border-radius:50%;display:block;}
-.dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#28ca42}
-.screen-head span{font-size:9px;letter-spacing:2px;opacity:0.3;text-transform:uppercase;}
-.code{padding:16px;font-family:monospace;font-size:11px;line-height:1.8;color:rgba(245,242,237,0.6);white-space:pre-wrap;min-height:220px;}
-.code b{color:#D4AF37;font-weight:400;}
-.code .dim{color:rgba(245,242,237,0.25);}
-.code .cur{display:inline-block;width:7px;height:12px;background:#D4AF37;margin-left:2px;vertical-align:middle;animation:blink 1s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.gear{display:flex;flex-direction:column;gap:12px;}
-.gear-card{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:16px;}
-.gear-card .k{font-size:8px;letter-spacing:3px;opacity:0.35;text-transform:uppercase;margin-bottom:8px;}
-.gear-card .v{font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.4;}
-.gear-card .v small{font-family:'Manrope',sans-serif;font-size:10px;color:rgba(245,242,237,0.4);display:block;margin-top:6px;line-height:1.6;}
-.timeline{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
-.timeline span{border:1px solid rgba(255,255,255,0.08);padding:8px 14px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,242,237,0.4);background:rgba(255,255,255,0.01);}
-.timeline span.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,0.06);}
+.hero p{margin:14px auto 0;max-width:540px;font-size:12px;line-height:1.9;color:rgba(245,242,237,0.45);font-weight:200;}
+.stats14{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px;}
+@media(max-width:700px){.stats14{grid-template-columns:repeat(2,1fr);}}
+.s14{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:16px;text-align:center;position:relative;}
+.s14.gold{border-color:rgba(212,175,55,0.22);background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));}
+.s14 .k{font-size:8px;letter-spacing:3px;opacity:0.35;text-transform:uppercase;margin-bottom:8px;}
+.s14 .v{font-family:'Cormorant Garamond',serif;font-size:22px;color:#F5F2ED;}
+.s14.gold .v{color:#D4AF37;}
+.journey{border:1px solid rgba(212,175,55,0.12);background:linear-gradient(180deg,rgba(212,175,55,0.04),rgba(0,0,0,0.15));padding:20px;margin-bottom:26px;display:grid;grid-template-columns:1.3fr 0.7fr;gap:16px;}
+@media(max-width:800px){.journey{grid-template-columns:1fr;}}
+.journey h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:10px;}
+.journey p{font-size:11px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;}
+.journey ul{list-style:none;padding:0;}
+.journey li{font-size:10px;letter-spacing:1px;color:rgba(245,242,237,0.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;}
+.journey li b{color:#D4AF37;font-weight:300;font-family:'Cormorant Garamond',serif;}
 .btn{border:1px solid #D4AF37;padding:12px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;justify-content:center;}
-.btn-gold{background:#D4AF37;color:#000;width:100%;}
+.btn-gold{background:#D4AF37;color:#000;}
 .btn-gold:hover{background:#E8C766;}
+.btn-ghost{color:#D4AF37;background:transparent;}
+.btn-ghost:hover{background:rgba(212,175,55,0.08);}
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:43.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
-.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
+.bar i{position:absolute;left:0;top:0;height:100%;width:46.6%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.vault{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
 .card .num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:4px;}
@@ -68,7 +68,7 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 <body>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — THE STUDIO — DAY 13 / 30 — BEHIND THE FORGE</div>
+<div class="top-left">@4t_jagga — HALF MOON — DAY 14 / 30 — 2 WEEKS STRAIGHT</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
@@ -76,52 +76,54 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 </div>
 
 <div class="hero">
-<h1>Inside <em>the</em> Studio.</h1>
-<p style="margin-top:12px;max-width:560px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">No MacBook. No agency. Just Spck on phone, Lahore PKT, and 13 days of shipping. This is how the empire is forged.</p>
+<div class="moon"></div>
+<div class="tag">● 14 DAYS — 2 WEEKS — NO ZERO — HALF MOON</div>
+<h1>Two Weeks <em>Forged.</em></h1>
+<p>From Day 01 Landing to Day 14 Half Moon — 14 luxury sites from Lahore, built on Spck mobile, pushed live every single day. Halfway to empire. The moon saw every night shift.</p>
 </div>
 
-<div class="studio">
-<div class="screen">
-<div class="screen-head"><div class="dots"><i></i><i></i><i></i></div><span>index.html — Spck Editor — Lahore</span><span style="color:#D4AF37;">● LIVE</span></div>
-<div class="code" id="codeBlock"></div>
-</div>
-<div class="gear">
-<div class="gear-card">
-<div class="k">Gear — Studio Setup</div>
-<div class="v">Spck Editor — Mobile
-<small>Phone pe code, phone pe push, phone pe empire. No laptop needed. Lahore se direct Vercel.</small></div>
-</div>
-<div class="gear-card">
-<div class="k">Stack — 13 Days</div>
-<div class="v">HTML / CSS / JS only
-<small>No React, no Tailwind. Pure luxury code — Cormorant + Manrope + gold #D4AF37.</small></div>
-</div>
-<div class="gear-card" style="border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));">
-<div class="k">Output — So Far</div>
-<div class="v" style="color:#D4AF37;">13 Sites — 43.3% Empire
-<small style="color:rgba(245,242,237,0.5);">my30dayweb.vercel.app — live proof<br><a href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" style="color:#D4AF37;text-decoration:none;">@4t_jagga on IG ↗</a></small></div>
-</div>
-<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">See Behind Scenes — IG ↗</a>
-</div>
+<div class="stats14">
+<div class="s14 gold"><div class="k">Days Forged</div><div class="v">14 / 30</div></div>
+<div class="s14 gold"><div class="k">Progress</div><div class="v">46.6%</div></div>
+<div class="s14"><div class="k">Zero Days</div><div class="v">0</div></div>
+<div class="s14"><div class="k">City</div><div class="v">Lahore</div></div>
 </div>
 
-<div class="timeline">
-<span class="active">● Studio Live</span><span>Spck — Mobile</span><span>13 Days Straight</span><span>No Zero Days</span><span>Lahore — PKT</span>
+<div class="journey">
+<div>
+<h3>The journey so far — from Lahore</h3>
+<p style="margin-bottom:12px;">14 days ago you started with one landing page. Now you have an archive, a map, a signal, an edit, a drop, a studio — and a half moon to witness it. The next 16 days finish the empire.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Celebrate — IG Story ↗</a>
+<a class="btn btn-ghost" href="https://my30dayweb.vercel.app" target="_blank" rel="noopener">View Empire</a>
+</div>
+</div>
+<div>
+<ul>
+<li><span>Day 01</span><b>Landing</b></li>
+<li><span>Day 07</span><b>Week 1</b></li>
+<li><span>Day 10</span><b>Archive</b></li>
+<li><span>Day 11</span><b>The Edit</b></li>
+<li><span>Day 12</span><b>The Drop</b></li>
+<li><span>Day 13</span><b>Studio</b></li>
+<li><span>Day 14</span><b style="color:#D4AF37;">Half Moon 🌙</b></li>
+</ul>
+</div>
 </div>
 
 <div class="bar"><i></i></div>
 <div class="vault">
-<div class="card done"><div class="num">DAY 09</div><h3>Signal</h3></div>
+<div class="card done"><div class="num">DAY 07</div><h3>Week 1</h3></div>
 <div class="card done"><div class="num">DAY 10</div><h3>Archive</h3></div>
 <div class="card done"><div class="num">DAY 11</div><h3>Edit</h3></div>
 <div class="card done"><div class="num">DAY 12</div><h3>Drop</h3></div>
-<div class="card active"><div class="num">DAY 13</div><h3>Studio</h3></div>
-<div class="card locked"><div class="num">DAY 14</div><h3>Locked</h3></div>
-<div class="card locked"><div class="num">DAY 20</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 13</div><h3>Studio</h3></div>
+<div class="card active"><div class="num">DAY 14</div><h3>Half Moon</h3></div>
+<div class="card locked"><div class="num">DAY 15</div><h3>Half</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
-<div class="bottom"><span>EST. LAHORE 2026 — 43.3% — STUDIO OPEN — SPCK FORGE</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — 46.6% — 2 WEEKS — HALF MOON WITNESS</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
@@ -136,39 +138,6 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
-const codeText=`<span class="dim">// Day 13 — THE STUDIO — @4t_jagga</span>
-<span class="dim">// Lahore, PK — Spck Editor — 13/30</span>
-
-<b>const</b> empire = {
-  days: <b>13</b>,
-  progress: <b>"43.3%"</b>,
-  location: <b>"Lahore"</b>,
-  gear: <b>"Spck Mobile"</b>,
-  status: <b>"FORGING"</b>,
-  instagram: <b>"@4t_jagga"</b>
-};
-
-<b>function</b> ship() {
-  <b>while</b>(days < 30) {
-    code();
-    push();
-    broadcast();
-  }
-}
-
-<span class="dim">// No zero days. No excuses.</span>
-<span class="dim">// my30dayweb.vercel.app is live.</span>
-ship();<span class="cur"></span>`;
-let i=0;
-const block=document.getElementById('codeBlock');
-function typeCode(){
-if(i<=codeText.length){
-block.innerHTML=codeText.slice(0,i);
-i++;
-setTimeout(typeCode,12);
-}
-}
-setTimeout(typeCode,300);
 </script>
 </body>
 </html>
