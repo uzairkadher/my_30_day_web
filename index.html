@@ -3,127 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 27 / THE SAFE</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Manrope:wght@300;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 28 / THE DOSSIER</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
-.wrap{width:100%;max-width:980px;border:1px solid #2a2a2a;background:linear-gradient(180deg,#1b1b18,#0e0e0c);box-shadow:14px 14px 0 #D4AF37;overflow:hidden;position:relative;}
-.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid #2a2a2a;background:#0e0e0c;}
+body{min-height:100vh;background:#d8d0b8;color:#111;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
+.wrap{width:100%;max-width:960px;border:2px solid #111;background:#fffcf0;box-shadow:12px 12px 0 #111;overflow:hidden;position:relative;}
+.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:2px solid #111;background:#111;color:#fffcf0;}
 .topbar .l{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;}
 .topbar .r{display:flex;align-items:center;gap:10px;}
-.mini-case{width:24px;height:24px;border-radius:50%;background:#1a1a1a;padding:1px;border:1px solid #D4AF37;}
+.mini-case{width:22px;height:22px;border-radius:50%;background:#222;padding:1px;border:1px solid #D4AF37;}
 .mini-glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#1a2a4a,#040508);position:relative;overflow:hidden;}
-.mini-orbit{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border:1px solid rgba(212,175,55,0.2);border-radius:50%;animation:spin 6s linear infinite;}
+.mini-orbit{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border:1px solid rgba(212,175,55,0.2);border-radius:50%;animation:spin 6s linear infinite;}
 .mini-planet{position:absolute;width:2px;height:2px;border-radius:50%;top:-1px;left:50%;margin-left:-1px;background:#D4AF37;}
-.mini-center{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
+.mini-center{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
 .mini-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;}
-.mini-h{width:1px;height:2.5px;background:#D4AF37;margin-left:-0.5px;}
-.mini-m{width:1px;height:3.5px;background:#fff;margin-left:-0.5px;}
-.time-mini{font-size:9px;letter-spacing:1px;font-family:'JetBrains Mono',monospace;}
+.mini-h{width:1px;height:2px;background:#D4AF37;margin-left:-0.5px;}
+.mini-m{width:1px;height:3px;background:#fff;margin-left:-0.5px;}
+.time-mini{font-size:8px;letter-spacing:1px;color:#fffcf0;font-family:'JetBrains Mono',monospace;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.safe-top{padding:20px 22px;display:grid;grid-template-columns:140px 1fr 0.6fr;gap:18px;align-items:center;border-bottom:1px solid #2a2a2a;}
-@media(max-width:750px){.safe-top{grid-template-columns:1fr;}}
-.safe-dial{width:122px;height:122px;border-radius:12px;border:3px solid #2a2a2a;background:linear-gradient(180deg,#2a2a2a,#0e0e0c);position:relative;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 20px rgba(0,0,0,0.8),0 0 0 1px #D4AF37;}
-.safe-dial .wheel{width:88px;height:88px;border-radius:50%;border:3px solid #D4AF37;background:radial-gradient(circle at 35% 35%,#3a3a3a,#1a1a1a);position:relative;display:flex;align-items:center;justify-content:center;}
-.safe-dial .wheel::before{content:'';position:absolute;inset:12px;border:1px dashed rgba(212,175,55,0.3);border-radius:50%;}
-.safe-dial .handle{position:absolute;width:4px;height:18px;background:#D4AF37;border-radius:2px;}
-.safe-dial .center{width:28px;height:28px;border-radius:50%;background:#D4AF37;color:#111;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;z-index:2;}
-.safe-top h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,48px);font-weight:300;line-height:0.9;}
-.safe-top h1 b{font-weight:600;color:#D4AF37;}
-.safe-top h1 .mono{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;display:block;margin-top:8px;}
-.safe-info{border-left:1px solid #2a2a2a;padding-left:16px;}
-@media(max-width:750px){.safe-info{border-left:none;border-top:1px solid #2a2a2a;padding-left:0;padding-top:12px;}}
-.safe-info .k{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;margin-bottom:8px;}
-.safe-info p{font-size:11px;line-height:1.7;opacity:0.6;}
-.combos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2a2a;border-bottom:1px solid #2a2a2a;}
-@media(max-width:600px){.combos{grid-template-columns:1fr;}}
-.combo{background:#171714;padding:14px 16px;text-align:center;}
-.combo .num{font-family:'JetBrains Mono',monospace;font-size:22px;color:#D4AF37;font-weight:700;}
-.combo .label{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-top:4px;}
-.combo.active{background:#D4AF37;}
-.combo.active .num{color:#111;}
-.combo.active .label{color:#111;opacity:0.6;}
-.stats27{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #2a2a2a;background:#0e0e0c;}
-@media(max-width:600px){.stats27{grid-template-columns:repeat(2,1fr);}}
-.s27{padding:12px 16px;text-align:center;border-right:1px solid #2a2a2a;}
-.s27:last-child{border-right:none;}
-.s27 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:4px;font-family:'JetBrains Mono',monospace;}
-.s27 .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
-.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:1px solid #2a2a2a;}
+.dossier-head{padding:18px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:2px solid #111;position:relative;}
+.dossier-head h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,42px);font-weight:600;line-height:0.9;}
+.dossier-head h1 i{font-style:italic;color:#8a6d1b;}
+.stamp{position:absolute;right:18px;top:14px;border:2px solid #c0392b;color:#c0392b;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:6px 10px;transform:rotate(12deg);font-weight:700;background:rgba(192,57,43,0.08);}
+.dossier-meta{font-size:8px;letter-spacing:3px;text-transform:uppercase;line-height:1.8;opacity:0.7;}
+.files{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#111;border-bottom:2px solid #111;}
+@media(max-width:600px){.files{grid-template-columns:1fr;}}
+.file{background:#fffcf0;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:9px;position:relative;overflow:hidden;}
+.file::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#111;}
+.file.active::before{background:#D4AF37;}
+.file.active{background:#111;color:#fffcf0;}
+.file.done{opacity:0.6;}
+.file.locked{opacity:0.2;}
+.file .id{color:#8a6d1b;font-weight:700;}
+.file.active .id{color:#D4AF37;}
+.file .status{font-size:7px;letter-spacing:2px;text-transform:uppercase;border:1px solid #111;padding:2px 6px;}
+.file.active .status{border-color:#D4AF37;color:#D4AF37;}
+.file .redact{width:60px;height:8px;background:#111;display:inline-block;}
+.stats28{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid #111;background:#111;color:#fffcf0;}
+@media(max-width:600px){.stats28{grid-template-columns:repeat(2,1fr);}}
+.s28{padding:10px 14px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
+.s28:last-child{border-right:none;}
+.s28 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:3px;font-family:'JetBrains Mono',monospace;}
+.s28 .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
+.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:2px solid #111;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
-.card{border-right:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;padding:10px;text-align:center;background:#0e0e0c;}
-.card .num{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;color:#D4AF37;margin-bottom:3px;}
-.card h3{font-size:10px;letter-spacing:1px;text-transform:uppercase;}
-.card.active{background:#D4AF37;color:#111;}
-.card.active .num{color:#111;}
+.card{border-right:1px solid #111;padding:10px;text-align:center;background:#fffcf0;}
+.card .num{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;color:#8a6d1b;margin-bottom:3px;font-weight:700;}
+.card h3{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;}
+.card.active{background:#111;color:#fffcf0;}
+.card.active .num{color:#D4AF37;}
 .card.done{opacity:0.5;}
-.card.locked{opacity:0.15;}
-.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 22px;background:#0e0e0c;border-top:1px solid #2a2a2a;}
-.action h3{font-family:'Cormorant Garamond',serif;font-size:16px;color:#D4AF37;}
-.action p{font-size:9px;opacity:0.5;font-family:'JetBrains Mono',monospace;}
-.btn{border:1px solid #D4AF37;padding:10px 16px;font-size:8px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;transition:0.2s;font-family:'JetBrains Mono',monospace;}
-.btn-b{background:#D4AF37;color:#111;}
-.bottom{padding:10px 22px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#0e0e0c;color:#D4AF37;flex-wrap:wrap;gap:8px;border-top:1px solid #2a2a2a;}
-.sig{font-family:'Cormorant Garamond',serif;font-size:14px;color:#efebe2;text-transform:none;letter-spacing:0;font-style:italic;}
+.card.locked{opacity:0.18;}
+.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 22px;background:#d8d0b8;}
+.action h3{font-family:'Cormorant Garamond',serif;font-size:16px;}
+.action p{font-size:9px;color:#666;font-family:'JetBrains Mono',monospace;}
+.btn{border:1.5px solid #111;padding:9px 14px;font-size:8px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;}
+.btn-b{background:#111;color:#fffcf0;}
+.bottom{padding:10px 22px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fffcf0;flex-wrap:wrap;gap:8px;}
+.sig{font-family:'Cormorant Garamond',serif;font-size:14px;color:#D4AF37;text-transform:none;letter-spacing:0;font-style:italic;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="topbar">
-<div class="l">SAFE No. 27 — 90% Diamond Grade — Combination 27-30-90 — Lahore — Spck Mobile</div>
+<div class="l">Dossier JAGGA-28 — Classified — 28 Files — 93.3% — Eyes Only — Lahore</div>
 <div class="r">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
 
-<div class="safe-top">
-<div class="safe-dial">
-<div class="wheel">
-<div class="handle" style="top:2px;left:50%;margin-left:-2px;"></div>
-<div class="handle" style="bottom:2px;left:50%;margin-left:-2px;"></div>
-<div class="handle" style="left:2px;top:50%;margin-top:-9px;transform:rotate(90deg);"></div>
-<div class="handle" style="right:2px;top:50%;margin-top:-9px;transform:rotate(90deg);"></div>
-<div class="center">27</div>
+<div class="dossier-head">
+<div>
+<h1>Classified <i>Dossier</i> — 28 Files</h1>
+<div style="margin-top:8px;font-size:10px;opacity:0.6;font-family:'JetBrains Mono',monospace;">Subject: @4t_jagga — Lahore — 28 consecutive infiltrations — Spck Mobile — No laptop</div>
 </div>
+<div class="dossier-meta">
+Case: JAGGA-28<br>
+Clearance: Eyes Only<br>
+Progress: 93.3% Declassified<br>
+Streak: 28 Days 🔥
 </div>
-<h1>The <b>Safe</b> — 90%<br>Diamond Inside<span class="mono">Combination 27-30-90 — 27 / 30 — 3 Days to Empire</span></h1>
-<div class="safe-info">
-<div class="k">Security — Diamond Grade</div>
-<p>27 sites secured inside diamond-grade safe. 90% threshold crossed — final 10% remains. Forged from Spck mobile — Lahore nights — no breach in 27 days.</p>
-</div>
+<div class="stamp">93.3%<br>Declassified</div>
 </div>
 
-<div class="combos">
-<div class="combo active"><div class="num">27</div><div class="label">Sites Secured</div></div>
-<div class="combo active"><div class="num">30</div><div class="label">Total Empire</div></div>
-<div class="combo active"><div class="num">90%</div><div class="label">Diamond Safe — Today</div></div>
+<div class="files">
+<div class="file done"><span class="id">FILE 24 — VAULT — 80%</span><span class="status">Sealed</span></div>
+<div class="file done"><span class="id">FILE 25 — CERTIFICATE — 83.3%</span><span class="status">Sealed</span></div>
+<div class="file done"><span class="id">FILE 26 — LEDGER — $2.6M</span><span class="status">Sealed</span></div>
+<div class="file done"><span class="id">FILE 27 — SAFE — 90% Diamond</span><span class="status">Sealed</span></div>
+<div class="file active"><span class="id">FILE 28 — DOSSIER — TODAY — 93.3%</span><span class="status">Open</span></div>
+<div class="file locked"><span class="id">FILE 29 — <span class="redact"></span></span><span class="status">Locked</span></div>
+<div class="file locked"><span class="id">FILE 30 — <span class="redact"></span> — Empire</span><span class="status">Final</span></div>
+<div class="file locked"><span class="id">FILE XX — <span class="redact"></span></span><span class="status">Classified</span></div>
 </div>
 
-<div class="stats27">
-<div class="s27"><div class="k">Inside Safe</div><div class="v">27 / 30</div></div>
-<div class="s27"><div class="k">Grade</div><div class="v">Diamond</div></div>
-<div class="s27"><div class="k">Security</div><div class="v">90%</div></div>
-<div class="s27"><div class="k">Streak</div><div class="v">27 🔥</div></div>
+<div class="stats28">
+<div class="s28"><div class="k">Declassified</div><div class="v">28 / 30</div></div>
+<div class="s28"><div class="k">Progress</div><div class="v">93.3%</div></div>
+<div class="s28"><div class="k">Clearance</div><div class="v">Eyes Only</div></div>
+<div class="s28"><div class="k">Streak</div><div class="v">28 🔥</div></div>
 </div>
 
 <div class="vault">
-<div class="card done"><div class="num">SAFE 24</div><h3>Vault</h3></div>
-<div class="card done"><div class="num">SAFE 25</div><h3>Cert</h3></div>
-<div class="card done"><div class="num">SAFE 26</div><h3>Ledger</h3></div>
-<div class="card active"><div class="num">SAFE 27</div><h3>Safe</h3></div>
-<div class="card locked"><div class="num">SAFE 28</div><h3>Locked</h3></div>
-<div class="card locked"><div class="num">SAFE 30</div><h3>Empire</h3></div>
+<div class="card done"><div class="num">FILE 25</div><h3>Cert</h3></div>
+<div class="card done"><div class="num">FILE 26</div><h3>Ledger</h3></div>
+<div class="card done"><div class="num">FILE 27</div><h3>Safe</h3></div>
+<div class="card active"><div class="num">FILE 28</div><h3>Dossier</h3></div>
+<div class="card locked"><div class="num">FILE 29</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">FILE 30</div><h3>Empire</h3></div>
 </div>
 
 <div class="action">
-<div><h3>Safe 27 — Diamond Grade — 90% — 3 Days to Crack Empire</h3><p>3 combinations left — then vault opens forever</p></div>
-<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Unlock — IG ↗</a>
+<div><h3>Dossier 28 — 93.3% Declassified — 2 Files to Empire</h3><p>2 redacted files remain — then final declassification</p></div>
+<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Declassify — IG ↗</a>
 </div>
 
-<div class="bottom"><span>Safe No. 27 — 90% Diamond — Lahore — Spck Mobile Only</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>Dossier JAGGA-28 — 93.3% — Classified — Lahore 2026 — Spck</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
