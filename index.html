@@ -4,17 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>@4t_jagga — DAY 02</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Manrope:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#0A0A0A;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:30px;}
+body{min-height:100vh;background:#0A0A0A;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:30px 16px;}
 .card{width:100%;max-width:850px;border:1px solid rgba(212,175,55,0.15);padding:70px 60px;position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);}
-.eyebrow{font-size:10px;letter-spacing:5px;opacity:0.4;text-transform:uppercase;margin-bottom:40px;display:flex;justify-content:space-between;}
+@media(max-width:600px){.card{padding:40px 24px;}}
+.eyebrow{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:40px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,64px);font-weight:300;line-height:1.1;max-width:600px;}
 h1 em{color:#D4AF37;font-style:italic;}
-.rules{margin-top:50px;border-top:1px solid rgba(212,175,55,0.12);padding-top:40px;display:grid;gap:25px;}
-.rule{display:flex;gap:20px;}
-.num{font-size:10px;color:#D4AF37;letter-spacing:2px;margin-top:5px;min-width:30px;}
+.rules{margin-top:50px;border-top:1px solid rgba(212,175,55,0.12);padding-top:40px;display:grid;gap:28px;}
+.rule{display:flex;gap:20px;align-items:flex-start;}
+.num{font-size:10px;color:#D4AF37;letter-spacing:2px;margin-top:6px;min-width:28px;opacity:0.9;}
 .text{font-size:14px;line-height:1.7;font-weight:200;color:rgba(245,242,237,0.7);}
 .text b{color:#F5F2ED;font-weight:400;}
 .footer{margin-top:60px;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;}
