@@ -3,58 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 03</title>
+<title>@4t_jagga — DAY 04 / GOLDEN HOUR</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#080808;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:900px;border:1px solid rgba(212,175,55,0.13);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));padding:50px 50px 40px;}
-@media(max-width:600px){.wrap{padding:32px 22px;}}
-.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:45px;}
-.hero{display:grid;grid-template-columns:120px 1fr;gap:30px;align-items:start;margin-bottom:45px;}
-@media(max-width:600px){.hero{grid-template-columns:1fr;}}
-.big{font-family:'Cormorant Garamond',serif;font-size:110px;line-height:0.8;font-weight:300;color:#D4AF37;}
-.title h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:1.1;}
-.title h1 i{color:#D4AF37;font-style:italic;}
-.title p{margin-top:12px;font-size:13px;line-height:1.6;color:rgba(245,242,237,0.5);font-weight:200;max-width:460px;}
-.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;margin:10px 0 40px;}
-.cell{aspect-ratio:1;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.25);}
-.cell.done{background:#D4AF37;color:#000;border-color:#D4AF37;font-weight:500;}
-.cell.active{border-color:#D4AF37;color:#D4AF37;box-shadow:0 0 18px rgba(212,175,55,0.25);}
-.logs{border-top:1px solid rgba(212,175,55,0.12);padding-top:30px;display:grid;gap:18px;}
-.log{display:flex;gap:16px;}
-.log time{min-width:78px;font-size:10px;letter-spacing:2px;color:#D4AF37;opacity:0.8;margin-top:4px;}
-.log p{font-size:13px;line-height:1.6;color:rgba(245,242,237,0.65);font-weight:200;}
-.log p b{color:#F5F2ED;font-weight:400;}
+body{min-height:100vh;background:#070707;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
+.wrap{width:100%;max-width:900px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(120% 120% at 20% 10%,rgba(212,175,55,0.08),transparent 40%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));padding:48px;}
+@media(max-width:600px){.wrap{padding:30px 20px;}}
+.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:40px;}
+.clock{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;}
+@media(max-width:700px){.clock{grid-template-columns:1fr;}}
+.time-box{border:1px solid rgba(255,255,255,0.07);padding:28px;}
+.label{font-size:9px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:18px;}
+.big-time{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,72px);font-weight:300;line-height:0.9;}
+.big-time span{color:#D4AF37;}
+.small{margin-top:10px;font-size:12px;color:rgba(245,242,237,0.45);font-weight:200;letter-spacing:1px;}
+.timer{display:flex;align-items:center;gap:18px;}
+.circle{width:92px;height:92px;border:1px solid rgba(212,175,55,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;color:#D4AF37;position:relative;}
+.circle::after{content:'';position:absolute;inset:-6px;border:1px solid rgba(212,175,55,0.12);border-radius:50%;}
+.timer-info h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;}
+.timer-info p{font-size:12px;color:rgba(245,242,237,0.5);margin-top:4px;font-weight:200;}
+.bar{height:1px;background:rgba(212,175,55,0.12);margin:36px 0;position:relative;overflow:hidden;}
+.bar i{position:absolute;left:0;top:0;height:100%;width:13%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.6);}
+.quote{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,3vw,24px);font-weight:300;line-height:1.4;color:rgba(245,242,237,0.7);max-width:600px;}
+.quote em{color:#D4AF37;font-style:italic;}
 .bottom{margin-top:40px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;opacity:1;text-transform:none;letter-spacing:0;font-style:italic;}
+.btn{margin-top:24px;display:inline-block;border:1px solid #D4AF37;color:#D4AF37;padding:12px 22px;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;background:transparent;transition:0.3s;}
+.btn:hover{background:#D4AF37;color:#000;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><span>@4t_jagga — 30 DAY CHALLENGE</span><span>DAY 03 / 30 — 10% COMPLETE</span></div>
+<div class="top"><span>@4t_jagga — 30 DAY CHALLENGE</span><span>DAY 04 / 30 — GOLDEN HOUR</span></div>
 
-<div class="hero">
-<div class="big">03</div>
-<div class="title">
-<h1>Execution <i>over</i> excuses.</h1>
-<p>Third day, same standard. Luxury is consistency when no one is watching.</p>
+<div class="clock">
+<div class="time-box">
+<div class="label">Lahore — Current Time</div>
+<div class="big-time" id="liveTime">--:-- <span>--</span></div>
+<div class="small" id="liveDate">Loading...</div>
+</div>
+<div class="time-box">
+<div class="label">Deep Work — Today</div>
+<div class="timer">
+<div class="circle" id="focusMin">90</div>
+<div class="timer-info">
+<h3>Focus Session</h3>
+<p>Golden hour. No phone. Just work.<br>13% of 30-day challenge done.</p>
+<button class="btn" onclick="startFocus()">Start 90 Min Focus</button>
+</div>
+</div>
 </div>
 </div>
 
-<div class="grid">
-<div class="cell done">01</div><div class="cell done">02</div><div class="cell active">03</div><div class="cell">04</div><div class="cell">05</div><div class="cell">06</div><div class="cell">07</div><div class="cell">08</div><div class="cell">09</div><div class="cell">10</div>
-<div class="cell">11</div><div class="cell">12</div><div class="cell">13</div><div class="cell">14</div><div class="cell">15</div><div class="cell">16</div><div class="cell">17</div><div class="cell">18</div><div class="cell">19</div><div class="cell">20</div>
-<div class="cell">21</div><div class="cell">22</div><div class="cell">23</div><div class="cell">24</div><div class="cell">25</div><div class="cell">26</div><div class="cell">27</div><div class="cell">28</div><div class="cell">29</div><div class="cell">30</div>
+<div class="bar"><i></i></div>
+
+<div class="quote">Time is the only <em>luxury</em> you can't buy back. So we don't waste it — we <em>invest</em> it.</div>
+
+<div class="bottom"><span>EST. LAHORE 2026 — 13% COMPLETE</span><span class="sig">@4t_jagga</span></div>
 </div>
 
-<div class="logs">
-<div class="log"><time>DAY 01</time><p><b>Luxury Landing</b> — Minimal, gold, black. Brand established.</p></div>
-<div class="log"><time>DAY 02</time><p><b>The Code</b> — Manifesto locked. No Zero Days.</p></div>
-<div class="log"><time>DAY 03</time><p><b>Execution Log</b> — 10% done. 90% to dominate. Built in Lahore.</p></div>
-</div>
+<script>
+function updateTime(){
+const now = new Date();
+const opts = {timeZone:'Asia/Karachi', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true};
+const dateOpts = {timeZone:'Asia/Karachi', weekday:'long', day:'numeric', month:'long', year:'numeric'};
+const timeStr = now.toLocaleTimeString('en-US', opts);
+const parts = timeStr.split(' ');
+document.getElementById('liveTime').innerHTML = parts[0] + ' <span>' + parts[1] + '</span>';
+document.getElementById('liveDate').textContent = now.toLocaleDateString('en-US', dateOpts) + ' — PKT';
+}
+setInterval(updateTime,1000); updateTime();
 
-<div class="bottom"><span>EST. LAHORE 2026</span><span class="sig">@4t_jagga</span></div>
-</div>
+let mins=90, interval=null;
+function startFocus(){
+if(interval) return;
+const el=document.getElementById('focusMin');
+interval=setInterval(()=>{
+mins--; el.textContent=mins;
+if(mins<=0){clearInterval(interval); el.textContent='DONE';}
+},60000);
+el.textContent=mins;
+}
+</script>
 </body>
 </html>
