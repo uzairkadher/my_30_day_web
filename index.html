@@ -3,132 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 23 / THE CONTRACT</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@300;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 24 / THE VAULT</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Manrope:wght@300;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#e8e0d0;color:#111;font-family:'EB Garamond',serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
-.wrap{width:100%;max-width:960px;border:2px solid #111;background:#fffcf3;box-shadow:12px 12px 0 #111;overflow:hidden;position:relative;}
-.wrap::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:#c9a8a8;z-index:2;}
-.topbar{padding:12px 22px 12px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:2px solid #111;background:#fffcf3;font-family:'Manrope',sans-serif;}
-.topbar .l{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#8a6d1b;font-weight:600;}
+body{min-height:100vh;background:#0b0b0a;color:#efebe2;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
+.wrap{width:100%;max-width:1020px;border:1px solid #2a2a2a;background:linear-gradient(180deg,#171714,#0b0b0a);box-shadow:0 0 0 1px #111,14px 14px 0 #D4AF37;overflow:hidden;position:relative;}
+.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid #2a2a2a;background:#0b0b0a;}
+.topbar .l{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;}
 .topbar .r{display:flex;align-items:center;gap:10px;}
-.mini-case{width:22px;height:22px;border-radius:50%;background:#111;padding:1px;}
+.mini-case{width:24px;height:24px;border-radius:50%;background:#1a1a1a;padding:1px;border:1px solid #D4AF37;}
 .mini-glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#1a2a4a,#040508);position:relative;overflow:hidden;}
-.mini-orbit{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border:1px solid rgba(255,255,255,0.1);border-radius:50%;animation:spin 6s linear infinite;}
+.mini-orbit{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border:1px solid rgba(212,175,55,0.2);border-radius:50%;animation:spin 6s linear infinite;}
 .mini-planet{position:absolute;width:2px;height:2px;border-radius:50%;top:-1px;left:50%;margin-left:-1px;background:#D4AF37;}
-.mini-center{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
+.mini-center{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
 .mini-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;}
-.mini-h{width:1px;height:2px;background:#D4AF37;margin-left:-0.5px;}
-.mini-m{width:1px;height:3px;background:#fff;margin-left:-0.5px;}
-.time-mini{font-size:8px;letter-spacing:1px;font-family:'Manrope',sans-serif;}
-.time-mini b{color:#8a6d1b;}
+.mini-h{width:1px;height:2.5px;background:#D4AF37;margin-left:-0.5px;}
+.mini-m{width:1px;height:3.5px;background:#fff;margin-left:-0.5px;}
+.time-mini{font-size:9px;letter-spacing:1px;font-family:'JetBrains Mono',monospace;}
+.time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.doc-head{padding:22px 22px 12px 48px;border-bottom:1px solid #111;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.doc-head h1{font-size:clamp(28px,5vw,42px);font-weight:600;line-height:0.95;}
-.doc-head h1 i{font-style:italic;color:#8a6d1b;}
-.doc-meta{font-family:'Manrope',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;line-height:1.8;}
-.doc-meta b{color:#111;display:inline-block;min-width:70px;}
-.seal{position:absolute;right:32px;top:112px;width:84px;height:84px;border:2px dashed #8a6d1b;border-radius:50%;display:flex;align-items:center;justify-content:center;transform:rotate(-12deg);z-index:3;background:rgba(212,175,55,0.08);}
-.seal span{font-family:'Manrope',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#8a6d1b;text-align:center;line-height:1.3;font-weight:600;}
-.contract-body{padding:16px 22px 16px 48px;font-size:13px;line-height:1.8;color:#222;position:relative;}
-.contract-body h3{font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;margin:14px 0 6px;color:#8a6d1b;}
-.contract-body p{margin-bottom:10px;}
-.clause{padding:10px 12px;border:1px solid #d4c9a8;background:rgba(212,175,55,0.06);margin-bottom:8px;display:flex;gap:10px;}
-.clause .no{font-family:'Manrope',sans-serif;font-size:9px;color:#8a6d1b;font-weight:600;min-width:24px;}
-.clause.active{border-color:#111;background:#111;color:#fffcf3;}
-.clause.active .no{color:#D4AF37;}
-.sign{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid #111;}
-.sign .s{font-family:'Manrope',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;}
-.sign .line{border-bottom:1px solid #111;margin-top:28px;padding-bottom:4px;font-family:'Cormorant Garamond',serif;font-size:18px;text-transform:none;letter-spacing:0;font-style:italic;color:#8a6d1b;}
-.stats23{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid #111;border-bottom:2px solid #111;background:#111;color:#fffcf3;font-family:'Manrope',sans-serif;}
-@media(max-width:600px){.stats23{grid-template-columns:repeat(2,1fr);}}
-.s23{padding:10px 14px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
-.s23:last-child{border-right:none;}
-.s23 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:3px;}
-.s23 .v{font-family:'EB Garamond',serif;font-size:18px;color:#D4AF37;}
-.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:2px solid #111;font-family:'Manrope',sans-serif;}
-@media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
-.card{border-right:1px solid #111;padding:10px;text-align:center;background:#fffcf3;}
-.card .num{font-size:7px;letter-spacing:2px;color:#8a6d1b;margin-bottom:3px;font-weight:700;}
-.card h3{font-size:10px;letter-spacing:1px;text-transform:uppercase;}
-.card.active{background:#111;color:#fffcf3;}
+.vault-top{padding:22px;display:grid;grid-template-columns:120px 1fr 0.6fr;gap:18px;align-items:center;border-bottom:1px solid #2a2a2a;}
+@media(max-width:750px){.vault-top{grid-template-columns:1fr;}}
+.dial{width:108px;height:108px;border-radius:50%;border:3px solid #D4AF37;background:radial-gradient(circle at 35% 35%,#2a2a2a,#0b0b0a);position:relative;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 20px rgba(0,0,0,0.8),0 0 0 6px #111;}
+.dial::before{content:'';position:absolute;inset:10px;border:1px dashed rgba(212,175,55,0.3);border-radius:50%;}
+.dial .nums{position:absolute;inset:0;}
+.dial .n{position:absolute;font-family:'JetBrains Mono',monospace;font-size:6px;color:#D4AF37;transform:translate(-50%,-50%);}
+.dial-center{width:32px;height:32px;border-radius:50%;background:#D4AF37;color:#111;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;z-index:2;}
+.vault-top h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:0.9;}
+.vault-top h1 b{font-weight:600;color:#D4AF37;}
+.vault-top h1 .mono{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;display:block;margin-top:8px;}
+.vault-info{border-left:1px solid #2a2a2a;padding-left:16px;}
+@media(max-width:750px){.vault-info{border-left:none;border-top:1px solid #2a2a2a;padding-left:0;padding-top:12px;}}
+.vault-info .k{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;margin-bottom:8px;}
+.vault-info p{font-size:11px;line-height:1.7;opacity:0.6;}
+.lockers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#2a2a2a;border-bottom:1px solid #2a2a2a;}
+@media(max-width:700px){.lockers{grid-template-columns:repeat(2,1fr);}}
+.locker{background:#171714;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;transition:0.2s;}
+.locker.active{background:#D4AF37;color:#111;}
+.locker.done{opacity:0.5;}
+.locker.locked{opacity:0.2;}
+.locker .id{color:#D4AF37;}
+.locker.active .id{color:#111;font-weight:700;}
+.locker .status{font-size:7px;letter-spacing:2px;text-transform:uppercase;opacity:0.6;}
+.stats24{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #2a2a2a;background:#0b0b0a;}
+@media(max-width:600px){.stats24{grid-template-columns:repeat(2,1fr);}}
+.s24{padding:12px 16px;text-align:center;border-right:1px solid #2a2a2a;}
+.s24:last-child{border-right:none;}
+.s24 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:4px;font-family:'JetBrains Mono',monospace;}
+.s24 .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
+.vault-bottom{display:grid;grid-template-columns:repeat(6,1fr);gap:0;}
+@media(max-width:700px){.vault-bottom{grid-template-columns:repeat(3,1fr);}}
+.card{border-right:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;padding:10px;text-align:center;background:#0b0b0a;}
+.card .num{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;color:#D4AF37;margin-bottom:3px;}
+.card h3{font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;}
+.card.active{background:#D4AF37;color:#111;}
 .card.done{opacity:0.5;}
-.card.locked{opacity:0.18;}
-.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 22px 12px 48px;background:#e8e0d0;font-family:'Manrope',sans-serif;border-bottom:2px solid #111;}
-.action h3{font-family:'EB Garamond',serif;font-size:16px;}
-.action p{font-size:9px;color:#666;}
-.btn{border:1.5px solid #111;padding:9px 14px;font-size:8px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;transition:0.2s;}
-.btn-b{background:#111;color:#fffcf3;}
-.bottom{padding:10px 22px 10px 48px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fffcf3;flex-wrap:wrap;gap:8px;font-family:'Manrope',sans-serif;}
-.sig{font-family:'Cormorant Garamond',serif;font-size:14px;color:#D4AF37;text-transform:none;letter-spacing:0;font-style:italic;}
+.card.locked{opacity:0.15;}
+.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 22px;background:#0b0b0a;border-top:1px solid #2a2a2a;}
+.action h3{font-family:'Cormorant Garamond',serif;font-size:16px;color:#D4AF37;}
+.action p{font-size:9px;opacity:0.5;font-family:'JetBrains Mono',monospace;}
+.btn{border:1px solid #D4AF37;padding:10px 16px;font-size:8px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;transition:0.2s;font-family:'JetBrains Mono',monospace;}
+.btn-b{background:#D4AF37;color:#111;}
+.bottom{padding:10px 22px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#0b0b0a;color:#D4AF37;flex-wrap:wrap;gap:8px;border-top:1px solid #2a2a2a;}
+.sig{font-family:'Cormorant Garamond',serif;font-size:14px;color:#efebe2;text-transform:none;letter-spacing:0;font-style:italic;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="seal"><span>EXECUTED<br>DAY 23<br>76.6%<br>— JAGGA —</span></div>
 <div class="topbar">
-<div class="l">Contract No. JAGGA-23 — Confidential — Lahore Jurisdiction — 76.6% Complete</div>
+<div class="l">VAULT No. 24 — Combination: 24-30-80 — Lahore — 80% Secured — Spck Mobile</div>
 <div class="r">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
-<div class="time-mini" id="miniTime"><b>00:00</b> AM — PKT</div>
+<div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
 
-<div class="doc-head">
-<h1>Empire <i>Contract</i><br>Day 23 of 30</h1>
-<div class="doc-meta">
-<b>Date:</b> Oct 8, 2026 — PKT<br>
-<b>Party:</b> @4t_jagga — Lahore<br>
-<b>Venue:</b> Spck Mobile Editor<br>
-<b>Status:</b> 76.6% Executed
+<div class="vault-top">
+<div class="dial">
+<div class="nums">
+<div class="n" style="left:50%;top:8%;">0</div>
+<div class="n" style="left:78%;top:22%;">10</div>
+<div class="n" style="left:90%;top:50%;">20</div>
+<div class="n" style="left:78%;top:78%;">30</div>
+<div class="n" style="left:50%;top:92%;">40</div>
+<div class="n" style="left:22%;top:78%;">50</div>
+</div>
+<div class="dial-center">24</div>
+</div>
+<h1>The <b>Vault</b><br>80% Secured<span class="mono">Combination 24-30-80 — 24 / 30 — No Breach</span></h1>
+<div class="vault-info">
+<div class="k">Security Log — Day 24</div>
+<p>24 sites locked inside empire vault. Combination: 24 forged, 30 total, 80% secured. Forged from Spck mobile — no laptop, no keycard — just Lahore grit and 24 consecutive vault deposits.</p>
 </div>
 </div>
 
-<div class="contract-body">
-<h3>Recitals — Whereby</h3>
-<p>WHEREAS, the Party of the First Part, known as <b>@4t_jagga</b>, resident of Lahore, did commence on Day One a solemn undertaking to forge THIRTY luxury websites in THIRTY days using only a mobile phone application known as Spck, without assistance of laptop, team, or excuse.</p>
-<p>WHEREAS, twenty-three days have elapsed with zero days missed, and twenty-three sites stand live at <b>my30dayweb.vercel.app</b>, constituting 76.6% of the Empire.</p>
-
-<h3>Clauses — Executed To Date</h3>
-<div class="clause"><span class="no">18.</span><span>The Press — newspaper headline executed — Lahore empire reported worldwide.</span></div>
-<div class="clause"><span class="no">19.</span><span>Gold Ticket — invitation only access granted — perforated and stamped.</span></div>
-<div class="clause"><span class="no">20.</span><span>Billboard — Times Square takeover — 20 sites in 20 days from phone.</span></div>
-<div class="clause"><span class="no">21.</span><span>Runway — fashion week collection — 21 looks presented.</span></div>
-<div class="clause"><span class="no">22.</span><span>Archive — museum accession JAGGA-001 to JAGGA-022 preserved.</span></div>
-<div class="clause active"><span class="no">23.</span><span>Contract — this instrument — 76.6% executed — 7 days to final empire.</span></div>
-
-<h3>Consideration</h3>
-<p>The Party hereby affirms: no zero days, no team, no laptop — only Spck mobile, Lahore nights, and relentless execution. This contract shall remain binding through Day 30 — Empire Complete.</p>
-
-<div class="sign">
-<div class="s">Party — Empire Builder<br><div class="line">@4t_jagga — Lahore</div></div>
-<div class="s">Witness — Spck Mobile<br><div class="line">No Laptop — Phone Only</div></div>
-</div>
+<div class="lockers">
+<div class="locker done"><span class="id">BOX 20 — BILLBOARD</span><span class="status">Sealed</span></div>
+<div class="locker done"><span class="id">BOX 21 — RUNWAY</span><span class="status">Sealed</span></div>
+<div class="locker done"><span class="id">BOX 22 — ARCHIVE</span><span class="status">Sealed</span></div>
+<div class="locker done"><span class="id">BOX 23 — CONTRACT</span><span class="status">Sealed</span></div>
+<div class="locker active"><span class="id">BOX 24 — VAULT — TODAY</span><span class="status">Unlocked</span></div>
+<div class="locker locked"><span class="id">BOX 25 — LOCKED</span><span class="status">—</span></div>
+<div class="locker locked"><span class="id">BOX 29 — LOCKED</span><span class="status">—</span></div>
+<div class="locker locked"><span class="id">BOX 30 — EMPIRE</span><span class="status">Final</span></div>
 </div>
 
-<div class="stats23">
-<div class="s23"><div class="k">Executed</div><div class="v">23 / 30</div></div>
-<div class="s23"><div class="k">Complete</div><div class="v">76.6%</div></div>
-<div class="s23"><div class="k">Clause</div><div class="v">No. 23</div></div>
-<div class="s23"><div class="k">Streak</div><div class="v">23 🔥</div></div>
+<div class="stats24">
+<div class="s24"><div class="k">Secured</div><div class="v">24 / 30</div></div>
+<div class="s24"><div class="k">Progress</div><div class="v">80%</div></div>
+<div class="s24"><div class="k">Combination</div><div class="v">24-30-80</div></div>
+<div class="s24"><div class="k">Streak</div><div class="v">24 🔥</div></div>
 </div>
 
-<div class="vault">
-<div class="card done"><div class="num">CLAUSE 20</div><h3>Billboard</h3></div>
-<div class="card done"><div class="num">CLAUSE 21</div><h3>Runway</h3></div>
-<div class="card done"><div class="num">CLAUSE 22</div><h3>Archive</h3></div>
-<div class="card active"><div class="num">CLAUSE 23</div><h3>Contract</h3></div>
-<div class="card locked"><div class="num">CLAUSE 24</div><h3>Locked</h3></div>
-<div class="card locked"><div class="num">CLAUSE 30</div><h3>Empire</h3></div>
+<div class="vault-bottom">
+<div class="card done"><div class="num">BOX 20</div><h3>Billboard</h3></div>
+<div class="card done"><div class="num">BOX 21</div><h3>Runway</h3></div>
+<div class="card done"><div class="num">BOX 22</div><h3>Archive</h3></div>
+<div class="card active"><div class="num">BOX 24</div><h3>Vault</h3></div>
+<div class="card locked"><div class="num">BOX 25</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">BOX 30</div><h3>Empire</h3></div>
 </div>
 
 <div class="action">
-<div><h3>Contract Executed — 23 Clauses Binding — 7 to Final Empire</h3><p>Lahore jurisdiction — No Zero Days — Spck Mobile Seal</p></div>
-<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Sign — IG ↗</a>
+<div><h3>Vault 24 — 80% Secured — Combination 24-30-80</h3><p>6 days to crack final box — BOX 30 — Empire Unlocked</p></div>
+<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Unlock — IG ↗</a>
 </div>
 
-<div class="bottom"><span>Contract JAGGA-23 — 76.6% — Lahore 2026 — Confidential — Spck Mobile</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>Vault No. 24 — 80% — Lahore — Combination Secured — Spck Mobile Only</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
@@ -140,7 +142,7 @@ if(mh) mh.style.transform=`translateX(-50%) rotate(${h*30 + m*0.5}deg)`;
 if(mm) mm.style.transform=`translateX(-50%) rotate(${m*6}deg)`;
 let hh=pk.getHours(); let ap=hh>=12?'PM':'AM'; hh=hh%12||12;
 const el=document.getElementById('miniTime');
-if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap} — PKT`;
+if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
 </script>
