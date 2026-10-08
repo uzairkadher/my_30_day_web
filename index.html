@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 07 / WEEK ONE</title>
+<title>@4t_jagga — DAY 08 / THE MAP</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;overflow-x:hidden;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.08),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;position:relative;z-index:1;}
+body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(120% 120% at 50% 0%,rgba(212,175,55,0.07),transparent 55%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,83 +24,78 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:center;margin-bottom:32px;}
-@media(max-width:800px){.hero{grid-template-columns:1fr;}}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,66px);font-weight:300;line-height:0.9;}
+
+.hero{margin-bottom:28px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,58px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.hero h1 i{font-style:normal;color:rgba(245,242,237,0.15);font-size:0.6em;vertical-align:super;letter-spacing:0;}
-.week-badge{border:1px solid #D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));padding:20px;text-align:center;position:relative;}
-.week-badge::before{content:'';position:absolute;inset:6px;border:1px solid rgba(212,175,55,0.15);pointer-events:none;}
-.big07{font-family:'Cormorant Garamond',serif;font-size:82px;font-weight:300;color:#D4AF37;line-height:0.9;}
-.week-badge .label{font-size:9px;letter-spacing:4px;color:#D4AF37;margin-top:8px;text-transform:uppercase;}
-.week-badge .sub{margin-top:12px;font-size:11px;line-height:1.6;color:rgba(245,242,237,0.4);font-weight:200;}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
-@media(max-width:600px){.stats{grid-template-columns:1fr;}}
-.stat{border:1px solid rgba(255,255,255,0.06);padding:18px;background:rgba(255,255,255,0.01);}
-.stat .k{font-size:9px;letter-spacing:3px;color:rgba(245,242,237,0.35);text-transform:uppercase;margin-bottom:10px;}
-.stat .v{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;}
-.stat .v em{color:#D4AF37;font-style:italic;font-weight:300;}
-.stat .line{margin-top:10px;height:1px;background:rgba(255,255,255,0.06);position:relative;}
-.stat .line i{position:absolute;left:0;top:0;height:100%;background:#D4AF37;}
-.seal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:28px;}
-.seal-day{border:1px solid rgba(212,175,55,0.18);padding:12px 6px;text-align:center;background:rgba(212,175,55,0.03);}
-.seal-day.done{background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));border-color:#D4AF37;}
-.seal-day .d{font-size:8px;letter-spacing:2px;color:#D4AF37;}
-.seal-day .t{font-family:'Cormorant Garamond',serif;font-size:12px;margin-top:4px;}
-.seal-day.done .t{color:#D4AF37;}
+
+.map-wrap{border:1px solid rgba(212,175,55,0.15);background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(255,255,255,0.005));padding:22px;margin-bottom:28px;position:relative;overflow:hidden;}
+.map-wrap::before{content:'';position:absolute;left:50%;top:20px;bottom:20px;width:1px;background:linear-gradient(to bottom,rgba(212,175,55,0.4),rgba(255,255,255,0.05),rgba(212,175,55,0.1));}
+@media(max-width:700px){.map-wrap::before{left:22px;}}
+.map-row{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:12px;padding:10px 0;position:relative;}
+@media(max-width:700px){.map-row{grid-template-columns:40px 1fr;}}
+.map-row.left{justify-self:end;text-align:right;}
+@media(max-width:700px){.map-row.left{justify-self:start;text-align:left;order:2;}.map-row.right{order:3;}.map-dot{order:1;}}
+.map-dot{width:24px;height:24px;border-radius:50%;background:#040508;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto;z-index:2;position:relative;}
+.map-dot.done{background:#D4AF37;border-color:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.map-dot.active{background:#040508;border-color:#D4AF37;box-shadow:0 0 0 4px rgba(212,175,55,0.15),0 0 20px rgba(212,175,55,0.3);}
+.map-dot.active::after{content:'';width:6px;height:6px;background:#D4AF37;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.map-label{font-size:11px;}
+.map-label b{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;display:block;}
+.map-label span{font-size:9px;letter-spacing:2px;opacity:0.4;text-transform:uppercase;}
+.map-label.done b{color:#D4AF37;}
+.map-label.active b{color:#D4AF37;}
+.map-phase{grid-column:1/4;text-align:center;padding:16px 0 8px;font-size:9px;letter-spacing:4px;color:#D4AF37;text-transform:uppercase;opacity:0.8;border-top:1px dashed rgba(212,175,55,0.15);margin-top:8px;}
+@media(max-width:700px){.map-phase{grid-column:1/3;}}
+
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:23.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.bar i{position:absolute;left:0;top:0;height:100%;width:26.6%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
-.card .num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:4px;}
+.card.num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:4px;}
 .card h3{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:400;}
 .card.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,0.15);}
 .card.done{opacity:0.45;}
 .card.locked{opacity:0.18;}
 .bottom{display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;opacity:1;text-transform:none;letter-spacing:0;font-style:italic;}
-/* CONFETTI */
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden;}
-.conf{position:absolute;width:8px;height:14px;top:-20px;animation:fall linear forwards;}
-@keyframes fall{0%{transform:translateY(-20px) rotate(0deg) translateX(0);opacity:1;}100%{transform:translateY(110vh) rotate(720deg) translateX(100px);opacity:0;}}
 </style>
 </head>
 <body>
-<div id="confetti"></div>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — WEEK ONE COMPLETE — DAY 07 / 30</div>
+<div class="top-left">@4t_jagga — THE MAP — DAY 08 / 30</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
+
 <div class="hero">
-<div>
-<h1>Week One <em>Done</em> <i>07/30</i></h1>
-<p style="margin-top:16px;max-width:420px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Seven days. No zero days. From landing to astronomia to atelier — we built a luxury archive live from Lahore. Motors never stopped.</p>
+<h1>The <em>Map</em> — 30 Day Empire.</h1>
+<p style="margin-top:12px;max-width:520px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Week one sealed. Now we see the whole road. 8 days in, 22 to go. Every dot is a shipped day from Lahore.</p>
 </div>
-<div class="week-badge">
-<div class="big07">07</div>
-<div class="label">Days Streak — Gold</div>
-<div class="sub">First week sealed.<br>23.3% empire built.<br>Est. Lahore 2026</div>
+
+<div class="map-wrap">
+<div class="map-phase">Phase 01 — Genesis [Done]</div>
+<div class="map-row"><div class="map-label left done"><b>Landing</b><span>Day 01 — Idea</span></div><div class="map-dot done">✓</div><div class="map-label right"><span>Start</span></div></div>
+<div class="map-row"><div class="map-label left"><span>Code</span></div><div class="map-dot done">✓</div><div class="map-label right done"><b>The Code</b><span>Day 02</span></div></div>
+<div class="map-row"><div class="map-label left done"><b>Execution</b><span>Day 03</span></div><div class="map-dot done">✓</div><div></div></div>
+<div class="map-row"><div></div><div class="map-dot done">✓</div><div class="map-label right done"><b>Golden Hour</b><span>Day 04 — Luxury</span></div></div>
+
+<div class="map-phase">Phase 02 — Atelier [Current]</div>
+<div class="map-row"><div class="map-label left done"><b>Astronomia</b><span>Day 05 — Planets</span></div><div class="map-dot done">✓</div><div></div></div>
+<div class="map-row"><div></div><div class="map-dot done">✓</div><div class="map-label right done"><b>Atelier</b><span>Day 06 — System</span></div></div>
+<div class="map-row"><div class="map-label left done"><b>Week One</b><span>Day 07 — Gold Seal</span></div><div class="map-dot done">✓</div><div></div></div>
+<div class="map-row"><div></div><div class="map-dot active"></div><div class="map-label right active"><b>The Map</b><span>Day 08 — You Are Here ★</span></div></div>
+
+<div class="map-phase">Phase 03 — Empire [Next]</div>
+<div class="map-row"><div class="map-label left" style="opacity:0.3"><b>Signal</b><span>Day 09-14</span></div><div class="map-dot"></div><div class="map-label right" style="opacity:0.3"><b>Drop</b><span>Day 15-21</span></div></div>
+<div class="map-row"><div class="map-label left" style="opacity:0.3"><b>Vault</b><span>Day 22-29</span></div><div class="map-dot" style="border-color:#D4AF37;background:rgba(212,175,55,0.1)">◉</div><div class="map-label right" style="opacity:0.3"><b>Empire</b><span>Day 30 — Final</span></div></div>
 </div>
-</div>
-<div class="stats">
-<div class="stat"><div class="k">Time Invested</div><div class="v"><em>168</em> Hours</div><div class="line"><i style="width:23.3%"></i></div></div>
-<div class="stat"><div class="k">Drops Shipped</div><div class="v">07 / 30 <em>Live</em></div><div class="line"><i style="width:23.3%"></i></div></div>
-<div class="stat"><div class="k">Consistency</div><div class="v"><em>100%</em> No Miss</div><div class="line"><i style="width:100%;background:#D4AF37"></i></div></div>
-</div>
-<div class="seal">
-<div class="seal-day done"><div class="d">DAY 01</div><div class="t">✓</div></div>
-<div class="seal-day done"><div class="d">DAY 02</div><div class="t">✓</div></div>
-<div class="seal-day done"><div class="d">DAY 03</div><div class="t">✓</div></div>
-<div class="seal-day done"><div class="d">DAY 04</div><div class="t">✓</div></div>
-<div class="seal-day done"><div class="d">DAY 05</div><div class="t">✓</div></div>
-<div class="seal-day done"><div class="d">DAY 06</div><div class="t">✓</div></div>
-<div class="seal-day done" style="border-color:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.2)"><div class="d">DAY 07</div><div class="t" style="color:#D4AF37">★</div></div>
-</div>
+
 <div class="bar"><i></i></div>
 <div class="vault">
 <div class="card done"><div class="num">DAY 01</div><h3>Landing</h3></div>
@@ -109,17 +104,17 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 <div class="card done"><div class="num">DAY 04</div><h3>Hour</h3></div>
 <div class="card done"><div class="num">DAY 05</div><h3>Astro</h3></div>
 <div class="card done"><div class="num">DAY 06</div><h3>Atelier</h3></div>
-<div class="card active"><div class="num">DAY 07</div><h3>Week One</h3></div>
-<div class="card locked"><div class="num">DAY 08</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 07</div><h3>Week 1</h3></div>
+<div class="card active"><div class="num">DAY 08</div><h3>The Map</h3></div>
 <div class="card locked"><div class="num">DAY 09</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 10</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 20</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
-<div class="bottom"><span>EST. LAHORE 2026 — WEEK ONE SEALED</span><span class="sig">@4t_jagga</span></div>
+
+<div class="bottom"><span>EST. LAHORE 2026 — 26.6% MAPPED — 22 DAYS TO EMPIRE</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
-// MINI CLOCK
 function upd(){
 const now=new Date();
 const pk=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
@@ -132,33 +127,6 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
-
-// GOAT CELEBRATION CONFETTI
-function launchConfetti(){
-const container=document.getElementById('confetti');
-const colors=['#D4AF37','#FFD700','#FFF8DC','#B8860B','#F5F2ED','#FFA500'];
-for(let i=0;i<150;i++){
-const conf=document.createElement('div');
-conf.className='conf';
-conf.style.left=Math.random()*100+'vw';
-conf.style.background=colors[Math.floor(Math.random()*colors.length)];
-conf.style.animationDuration=(2+Math.random()*3)+'s';
-conf.style.animationDelay=(Math.random()*0.5)+'s';
-conf.style.transform=`rotate(${Math.random()*360}deg)`;
-conf.style.width=(6+Math.random()*8)+'px';
-conf.style.height=(8+Math.random()*12)+'px';
-conf.style.borderRadius=Math.random()>0.5?'2px':'50%';
-container.appendChild(conf);
-setTimeout(()=>conf.remove(),5000);
-}
-}
-window.addEventListener('load',()=>{
-launchConfetti();
-setTimeout(launchConfetti,600);
-setTimeout(launchConfetti,1200);
-});
-// also on click for fun
-document.addEventListener('click',launchConfetti);
 </script>
 </body>
 </html>
