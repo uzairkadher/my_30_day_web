@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 25 / CERTIFICATE</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Manrope:wght@300;700&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 26 / THE LEDGER</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#e9e1c8;color:#111;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
-.frame{width:100%;max-width:880px;background:#fffdf6;border:14px solid #111;outline:3px solid #D4AF37;outline-offset:-10px;box-shadow:14px 14px 0 #111;padding:0;overflow:hidden;position:relative;}
-.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid #111;background:#111;color:#fffdf6;}
+body{min-height:100vh;background:#f2efe6;color:#111;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
+.wrap{width:100%;max-width:980px;border:2px solid #111;background:#fffcf0;box-shadow:12px 12px 0 #111;overflow:hidden;position:relative;}
+.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:2px solid #111;background:#111;color:#fffcf0;}
 .topbar .l{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;}
 .topbar .r{display:flex;align-items:center;gap:10px;}
 .mini-case{width:22px;height:22px;border-radius:50%;background:#222;padding:1px;border:1px solid #D4AF37;}
@@ -20,100 +20,109 @@ body{min-height:100vh;background:#e9e1c8;color:#111;font-family:'Manrope',sans-s
 .mini-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;}
 .mini-h{width:1px;height:2px;background:#D4AF37;margin-left:-0.5px;}
 .mini-m{width:1px;height:3px;background:#fff;margin-left:-0.5px;}
-.time-mini{font-size:8px;letter-spacing:1px;color:#fffdf6;}
+.time-mini{font-size:8px;letter-spacing:1px;color:#fffcf0;font-family:'JetBrains Mono',monospace;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.cert{padding:26px 28px 18px;text-align:center;position:relative;}
-.cert-border{position:absolute;inset:14px;border:1px solid #D4AF37;pointer-events:none;opacity:0.4;}
-.badge{width:72px;height:72px;margin:0 auto 14px;border-radius:50%;border:2px solid #D4AF37;background:radial-gradient(circle at 35% 35%,#fff9e6,#e9e1c8);display:flex;align-items:center;justify-content:center;position:relative;}
-.badge::before{content:'★';font-size:28px;color:#D4AF37;}
-.cert h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,44px);font-weight:300;line-height:1;}
-.cert h1 em{font-style:italic;color:#8a6d1b;font-weight:600;}
-.cert .sub{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8a6d1b;margin:10px 0 16px;font-weight:700;}
-.cert .name{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,30px);font-style:italic;margin-bottom:6px;}
-.cert .line{width:180px;height:1px;background:#111;margin:8px auto;}
-.cert .desc{font-size:11px;line-height:1.7;color:#555;max-width:420px;margin:12px auto 16px;}
-.sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto;}
-.sign-grid .s{border-top:1px solid #111;padding-top:6px;}
-.sign-grid .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#8a6d1b;margin-bottom:4px;font-weight:700;}
-.sign-grid .v{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:#111;}
-.seal-box{position:absolute;right:24px;bottom:18px;width:68px;height:68px;border:2px dashed #D4AF37;border-radius:50%;display:flex;align-items:center;justify-content:center;transform:rotate(-14deg);background:rgba(212,175,55,0.1);}
-.seal-box span{font-size:6px;letter-spacing:2px;text-transform:uppercase;color:#8a6d1b;text-align:center;line-height:1.2;font-weight:700;}
-.stats25{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid #111;border-bottom:2px solid #111;background:#111;color:#fffdf6;}
-@media(max-width:600px){.stats25{grid-template-columns:repeat(2,1fr);}}
-.s25{padding:10px 14px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
-.s25:last-child{border-right:none;}
-.s25 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:3px;}
-.s25 .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
+.ledger-head{padding:18px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid #111;}
+.ledger-head h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,40px);font-weight:600;line-height:0.9;}
+.ledger-head h1 i{font-style:italic;color:#8a6d1b;}
+.ledger-head .meta{font-size:8px;letter-spacing:3px;text-transform:uppercase;line-height:1.8;opacity:0.7;}
+.ledger{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:10px;}
+.ledger th{font-size:7px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fffcf0;padding:8px 12px;text-align:left;border-bottom:1px solid #111;}
+.ledger td{padding:9px 12px;border-bottom:1px solid #ddd;font-size:9px;}
+.ledger tr:nth-child(even){background:rgba(212,175,55,0.07);}
+.ledger tr.active{background:#111;color:#fffcf0;}
+.ledger tr.active td{color:#fffcf0;}
+.ledger .amt{color:#8a6d1b;font-weight:700;}
+.ledger .active .amt{color:#D4AF37;}
+.ledger .status{font-size:7px;letter-spacing:2px;text-transform:uppercase;padding:2px 6px;border:1px solid #111;display:inline-block;}
+.ledger .active .status{border-color:#D4AF37;color:#D4AF37;}
+.total{padding:12px 22px;display:flex;justify-content:space-between;align-items:center;background:#e9e1c8;border-top:2px solid #111;border-bottom:2px solid #111;font-family:'JetBrains Mono',monospace;flex-wrap:wrap;gap:8px;}
+.total .l{font-size:8px;letter-spacing:3px;text-transform:uppercase;}
+.total .r{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;}
+.total .r b{color:#8a6d1b;}
+.stats26{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid #111;background:#111;color:#fffcf0;}
+@media(max-width:600px){.stats26{grid-template-columns:repeat(2,1fr);}}
+.s26{padding:10px 14px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
+.s26:last-child{border-right:none;}
+.s26 .k{font-size:7px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:3px;}
+.s26 .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:2px solid #111;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
-.card{border-right:1px solid #111;padding:10px;text-align:center;background:#fffdf6;}
-.card .num{font-size:7px;letter-spacing:2px;color:#8a6d1b;margin-bottom:3px;font-weight:700;}
+.card{border-right:1px solid #111;padding:10px;text-align:center;background:#fffcf0;font-family:'Manrope',sans-serif;}
+.card .num{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;color:#8a6d1b;margin-bottom:3px;font-weight:700;}
 .card h3{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;}
-.card.active{background:#111;color:#fffdf6;}
+.card.active{background:#111;color:#fffcf0;}
 .card.active .num{color:#D4AF37;}
 .card.done{opacity:0.5;}
 .card.locked{opacity:0.18;}
-.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 22px;background:#e9e1c8;}
+.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 22px;background:#fffcf0;}
 .action h3{font-family:'Cormorant Garamond',serif;font-size:16px;}
-.action p{font-size:9px;color:#666;}
+.action p{font-size:9px;color:#666;font-family:'JetBrains Mono',monospace;}
 .btn{border:1.5px solid #111;padding:9px 14px;font-size:8px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;}
-.btn-b{background:#111;color:#fffdf6;}
-.bottom{padding:10px 22px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fffdf6;flex-wrap:wrap;gap:8px;}
+.btn-b{background:#111;color:#fffcf0;}
+.bottom{padding:10px 22px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fffcf0;flex-wrap:wrap;gap:8px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:14px;color:#D4AF37;text-transform:none;letter-spacing:0;font-style:italic;}
 </style>
 </head>
 <body>
-<div class="frame">
+<div class="wrap">
 <div class="topbar">
-<div class="l">Certificate No. JAGGA-25 — Gold Embossed — Lahore — 83.3% — Spck Mobile</div>
+<div class="l">Ledger No. JAGGA-26 — 26 Entries — 86.6% Audited — Lahore — Spck Mobile</div>
 <div class="r">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
 
-<div class="cert">
-<div class="cert-border"></div>
-<div class="badge"></div>
-<h1>Certificate of <em>Empire</em></h1>
-<div class="sub">83.3% Complete — 25 of 30 — Spck Mobile Forged</div>
-<div class="name">@4t_jagga — Lahore</div>
-<div class="line"></div>
-<div class="desc">This certifies that twenty-five luxury websites have been forged consecutively from a single mobile phone — Spck editor — without laptop, team, or zero days — constituting 83.3% of the Empire — my30dayweb.vercel.app</div>
-
-<div class="sign-grid">
-<div class="s"><div class="k">Certified Builder</div><div class="v">@4t_jagga — 25 days streak 🔥</div></div>
-<div class="s"><div class="k">Venue & Tool</div><div class="v">Spck Mobile — Lahore Nights</div></div>
-<div class="s"><div class="k">Date Issued</div><div class="v">Day 25 — 83.3% Empire</div></div>
-<div class="s"><div class="k">Final Award</div><div class="v">Day 30 — Empire Complete</div></div>
+<div class="ledger-head">
+<h1>Empire <i>Ledger</i> — 26 Entries</h1>
+<div class="meta">
+Date: Oct 2026 — PKT<br>
+Account: @4t_jagga — Lahore<br>
+Tool: Spck Mobile — No Laptop<br>
+Audit: 86.6% Complete
+</div>
 </div>
 
-<div class="seal-box"><span>GOLD<br>SEAL<br>25/30<br>— JAGGA —</span></div>
+<table class="ledger">
+<tr><th>No.</th><th>Site / Asset</th><th>Date</th><th>Value</th><th>Status</th></tr>
+<tr><td>022</td><td>THE ARCHIVE — Museum Accession</td><td>Day 22</td><td class="amt">$1.2M</td><td><span class="status">Audited</span></td></tr>
+<tr><td>023</td><td>THE CONTRACT — Legal Execution</td><td>Day 23</td><td class="amt">$1.4M</td><td><span class="status">Audited</span></td></tr>
+<tr><td>024</td><td>THE VAULT — 80% Secured</td><td>Day 24</td><td class="amt">$1.8M</td><td><span class="status">Audited</span></td></tr>
+<tr><td>025</td><td>THE CERTIFICATE — Gold Seal</td><td>Day 25</td><td class="amt">$2.0M</td><td><span class="status">Audited</span></td></tr>
+<tr class="active"><td>026</td><td>THE LEDGER — TODAY — 86.6%</td><td>Day 26</td><td class="amt">$2.6M — TODAY</td><td><span class="status">Open</span></td></tr>
+<tr><td>027</td><td>LOCKED — Classified</td><td>—</td><td class="amt">—</td><td><span class="status">Locked</span></td></tr>
+<tr><td>030</td><td>THE EMPIRE — Final Audit</td><td>Day 30</td><td class="amt">$10M — Final</td><td><span class="status">Pending</span></td></tr>
+</table>
+
+<div class="total">
+<div class="l">Total Empire Value Audited To Date — 26 Entries</div>
+<div class="r"><b>$2.6M</b> — 86.6% — 26 / 30 — 4 Days to Final</div>
 </div>
 
-<div class="stats25">
-<div class="s25"><div class="k">Certified</div><div class="v">25 / 30</div></div>
-<div class="s25"><div class="k">Progress</div><div class="v">83.3%</div></div>
-<div class="s25"><div class="k">Seal</div><div class="v">Gold ★</div></div>
-<div class="s25"><div class="k">Streak</div><div class="v">25 🔥</div></div>
+<div class="stats26">
+<div class="s26"><div class="k">Entries</div><div class="v">26 / 30</div></div>
+<div class="s26"><div class="k">Audited</div><div class="v">86.6%</div></div>
+<div class="s26"><div class="k">Value</div><div class="v">$2.6M</div></div>
+<div class="s26"><div class="k">Streak</div><div class="v">26 🔥</div></div>
 </div>
 
 <div class="vault">
-<div class="card done"><div class="num">CERT 22</div><h3>Archive</h3></div>
-<div class="card done"><div class="num">CERT 23</div><h3>Contract</h3></div>
-<div class="card done"><div class="num">CERT 24</div><h3>Vault</h3></div>
-<div class="card active"><div class="num">CERT 25</div><h3>Cert</h3></div>
-<div class="card locked"><div class="num">CERT 26</div><h3>Locked</h3></div>
-<div class="card locked"><div class="num">CERT 30</div><h3>Empire</h3></div>
+<div class="card done"><div class="num">ENTRY 23</div><h3>Contract</h3></div>
+<div class="card done"><div class="num">ENTRY 24</div><h3>Vault</h3></div>
+<div class="card done"><div class="num">ENTRY 25</div><h3>Cert</h3></div>
+<div class="card active"><div class="num">ENTRY 26</div><h3>Ledger</h3></div>
+<div class="card locked"><div class="num">ENTRY 27</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">ENTRY 30</div><h3>Empire</h3></div>
 </div>
 
 <div class="action">
-<div><h3>Gold Seal — 25 Sites Certified — 5 Days to Final Frame</h3><p>Framed in gold — forged on phone — Lahore</p></div>
-<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Certified — IG ↗</a>
+<div><h3>Ledger Entry 26 — $2.6M Audited — 4 Days to Final Audit</h3><p>No zero days — Spck mobile — Lahore books balanced</p></div>
+<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Audit — IG ↗</a>
 </div>
 
-<div class="bottom"><span>Certificate JAGGA-25 — 83.3% — Gold Embossed — Lahore 2026 — Spck</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>Ledger JAGGA-26 — 86.6% — $2.6M — Lahore 2026 — Spck Mobile</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
