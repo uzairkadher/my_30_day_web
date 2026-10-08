@@ -9,6 +9,25 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
 .wrap{width:100%;max-width:1020px;border:1px solid #D4AF37;background:linear-gradient(180deg,#1f1e1a,#0e0e0c);box-shadow:16px 16px 0 #D4AF37,0 0 80px rgba(212,175,55,0.25);overflow:hidden;position:relative;}
+/* CAR ROAD - RIGHT TO LEFT FRONT FACING */
+.car-road{height:42px;background:#111;border-bottom:1px solid #D4AF37;position:relative;overflow:hidden;cursor:pointer;}
+.car-road::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:repeating-linear-gradient(90deg,#D4AF37 0 14px,transparent 14px 26px);opacity:0.4;}
+.car-track{position:absolute;top:0;left:0;right:0;bottom:0;animation:driveTrack 5.5s linear infinite;}
+@keyframes driveTrack{0%{transform:translateX(110%)}100%{transform:translateX(-140px)}}
+.car-body{position:absolute;left:0;top:50%;transform:translateY(-50%);width:84px;height:18px;background:linear-gradient(180deg,#D4AF37,#8a6d1b);border-radius:3px 6px 6px 3px;border:1px solid #000;box-shadow:0 0 10px rgba(212,175,55,0.5);}
+.car-body::before{content:'';position:absolute;left:-6px;top:3px;width:10px;height:10px;background:#D4AF37;clip-path:polygon(100% 0,0 50%,100% 100%);}
+.car-roof{position:absolute;left:22px;top:-10px;width:36px;height:10px;background:#111;border:1px solid #D4AF37;border-bottom:none;border-radius:4px 4px 0 0;}
+.car-window{position:absolute;left:2px;top:1px;right:2px;bottom:1px;background:linear-gradient(180deg,#1a2a4a,#040508);border-radius:2px;}
+.car-light{position:absolute;left:-4px;top:4px;width:4px;height:4px;background:#fff;border-radius:50%;box-shadow:0 0 6px 2px #fff,0 0 12px #D4AF37;}
+.car-wheel{position:absolute;bottom:-6px;width:12px;height:12px;background:#111;border:2px solid #D4AF37;border-radius:50%;}
+.car-wheel::after{content:'';position:absolute;left:2px;top:2px;right:2px;bottom:2px;background:#D4AF37;border-radius:50%;animation:spinWheel 0.2s linear infinite;}
+.w1{left:12px} .w2{right:12px}
+@keyframes spinWheel{to{transform:rotate(360deg)}}
+.car-smoke{position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-size:10px;opacity:0.6;animation:smoke 0.5s linear infinite;}
+@keyframes smoke{0%{opacity:0.6;transform:translateY(-50%) translateX(0)}100%{opacity:0;transform:translateY(-50%) translateX(14px)}}
+.road-label{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-family:'JetBrains Mono',monospace;opacity:0.5;}
+.audio-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#111;background:#D4AF37;border:none;padding:4px 10px;border-radius:12px;font-family:'JetBrains Mono',monospace;font-weight:700;cursor:pointer;z-index:5;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,0.7)}70%{box-shadow:0 0 0 8px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
 .topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid #D4AF37;background:#111;}
 .topbar .l{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;}
 .topbar .r{display:flex;align-items:center;gap:10px;}
@@ -25,18 +44,17 @@ body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',san
 @keyframes spin{to{transform:rotate(360deg);}}
 .empire-hero{padding:28px 22px 22px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:22px;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #D4AF37;}
 @media(max-width:800px){.empire-hero{grid-template-columns:1fr;}}
-.empire-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(600px 400px at 20% 0%,rgba(212,175,55,0.18),transparent 60%),radial-gradient(400px 300px at 90% 20%,rgba(212,175,55,0.08),transparent 50%);pointer-events:none;}
-.hero-left{position:relative;z-index:1;}
 .hero-left .eyebrow{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:#D4AF37;font-family:'JetBrains Mono',monospace;margin-bottom:12px;}
 .hero-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,64px);font-weight:300;line-height:0.85;}
 .hero-left h1 b{font-weight:700;color:#D4AF37;}
 .hero-left h1 i{font-style:italic;font-weight:400;}
 .hero-left .sub{margin-top:14px;font-size:12px;line-height:1.7;opacity:0.6;max-width:520px;}
-.crown{position:relative;z-index:1;width:100%;aspect-ratio:1;background:radial-gradient(circle at 40% 30%,#2a2a2a,#0e0e0c);border:2px solid #D4AF37;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 40px rgba(0,0,0,0.8),0 0 40px rgba(212,175,55,0.15);padding:16px;text-align:center;}
-.crown .emoji{font-size:48px;margin-bottom:8px;}
+.crown{width:100%;aspect-ratio:1;background:radial-gradient(circle at 40% 30%,#2a2a2a,#0e0e0c);border:2px solid #D4AF37;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;position:relative;overflow:hidden;}
+.crown .emoji{font-size:48px;margin-bottom:8px;animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .crown .pct{font-family:'Cormorant Garamond',serif;font-size:52px;color:#D4AF37;font-weight:700;line-height:1;}
 .crown .label{font-size:8px;letter-spacing:4px;text-transform:uppercase;opacity:0.5;margin-top:6px;font-family:'JetBrains Mono',monospace;}
-.crown .streak{margin-top:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid #D4AF37;padding:6px 12px;color:#D4AF37;font-family:'JetBrains Mono',monospace;}
+.crown .streak{margin-top:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid #D4AF37;padding:6px 12px;color:#D4AF37;font-family:'JetBrains Mono',monospace;background:rgba(212,175,55,0.1);}
 .stats30{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #D4AF37;background:#111;}
 @media(max-width:600px){.stats30{grid-template-columns:repeat(2,1fr);}}
 .s30{padding:14px 16px;text-align:center;border-right:1px solid rgba(212,175,55,0.2);}
@@ -48,7 +66,7 @@ body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',san
 .grid30{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#2a2a2a;}
 @media(max-width:900px){.grid30{grid-template-columns:repeat(5,1fr);}}
 @media(max-width:600px){.grid30{grid-template-columns:repeat(3,1fr);}}
-.day{padding:10px 8px;text-align:center;background:#171714;font-family:'JetBrains Mono',monospace;font-size:8px;transition:0.2s;position:relative;overflow:hidden;}
+.day{padding:10px 8px;text-align:center;background:#171714;font-family:'JetBrains Mono',monospace;font-size:8px;}
 .day .d{font-size:7px;color:#D4AF37;letter-spacing:2px;}
 .day .n{font-size:9px;margin-top:3px;letter-spacing:1px;text-transform:uppercase;color:#efebe2;font-weight:700;}
 .day.done{background:linear-gradient(180deg,#1e1d1a,#171714);}
@@ -71,11 +89,39 @@ body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',san
 .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
 .confetti span{position:absolute;width:4px;height:4px;background:#D4AF37;animation:fall 3s linear infinite;}
 @keyframes fall{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(600px) rotate(720deg);opacity:0}}
+/* CONGRATS AUDIO BAR */
+.congrats-bar{padding:10px 22px;background:linear-gradient(90deg,#D4AF37,#8a6d1b);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.congrats-bar .txt{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#111;font-family:'JetBrains Mono',monospace;font-weight:700;}
+.congrats-bar audio{height:28px;accent-color:#111;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="confetti"><span style="left:5%;animation-delay:0s"></span><span style="left:15%;animation-delay:0.3s;background:#fff"></span><span style="left:25%;animation-delay:0.6s"></span><span style="left:35%;animation-delay:0.2s;background:#8a6d1b"></span><span style="left:45%;animation-delay:0.8s"></span><span style="left:55%;animation-delay:0.4s;background:#fff"></span><span style="left:65%;animation-delay:0.1s"></span><span style="left:75%;animation-delay:0.5s"></span><span style="left:85%;animation-delay:0.7s;background:#fff"></span><span style="left:95%;animation-delay:0.9s"></span></div>
+<div class="confetti"><span style="left:5%"></span><span style="left:15%;background:#fff"></span><span style="left:25%"></span><span style="left:45%"></span><span style="left:65%"></span><span style="left:85%;background:#fff"></span><span style="left:95%"></span></div>
+
+<div class="car-road" onclick="playCongrats()">
+<div class="road-label">Empire Express — Front Running — 30/30</div>
+<button class="audio-btn" id="playBtn">🎉 Play Congrats Beat</button>
+<div class="car-track">
+<div class="car-body">
+<div class="car-roof"><div class="car-window"></div></div>
+<div class="car-light"></div>
+<div class="car-wheel w1"></div>
+<div class="car-wheel w2"></div>
+<div class="car-smoke">💨</div>
+</div>
+</div>
+</div>
+
+<!-- CONGRATULATIONS BEAT - ROYALTY FREE -->
+<div class="congrats-bar">
+<div class="txt">🎉 Congratulations — 30 Days Challenge Completed — @4t_jagga — 100% Empire — Click Car to Celebrate!</div>
+<audio id="congratsAudio" loop controls preload="auto">
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2b4aed0d0d.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/audio/2021/08/04/audio_0625c1539c.mp3" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
+</div>
 
 <div class="topbar">
 <div class="l">Empire JAGGA-30 — 100% — 30/30 — Final Coronation — Lahore — Spck Mobile — Oct 2026</div>
@@ -95,7 +141,7 @@ body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',san
 <div class="emoji">👑</div>
 <div class="pct">100%</div>
 <div class="label">Empire Complete — 30/30</div>
-<div class="streak">30 🔥 Days — No Zero</div>
+<div class="streak">30 🔥 Days — No Zero — Congratulations!</div>
 </div>
 </div>
 
@@ -127,22 +173,24 @@ body{min-height:100vh;background:#0e0e0c;color:#efebe2;font-family:'Manrope',san
 </div>
 </div>
 
-<div class="legacy">
-<div class="legacy-box"><h3>Legacy — What You Built</h3><p>30 luxury sites — 30 days straight — zero misses — built on Spck mobile from Lahore — no MacBook — no team — proof that execution > ideas. Vercel: my30dayweb.vercel.app — IG: @4t_jagga</p></div>
-<div class="legacy-box"><h3>Next — What Comes After 100%</h3><p>Empire is not the end — it is the foundation. Day 31 starts tomorrow — but now you are not building a site — you are building a legacy. 100% is not a finish line — it is a standard.</p></div>
-</div>
-
 <div class="action">
-<div><h3>Empire 30 — 100% — 30/30 — Final Coronation 👑</h3><p>30 days — no zero days — Lahore — Spck — @4t_jagga — Oct 2026</p></div>
+<div><h3>Empire 30 — 100% — 30/30 — Final Coronation 👑</h3><p>30 days — no zero days — Lahore — Spck — @4t_jagga — Oct 2026 — Congratulations Beat On! 🎉</p></div>
 <div class="btns">
-<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Empire — IG 👑 ↗</a>
+<a class="btn btn-b" href="https://www.instagram.com/4t_jagga" target="_blank" rel="noopener">Empire — IG 👑 ↗</a>
 <a class="btn btn-o" href="https://my30dayweb.vercel.app/" target="_blank" rel="noopener">Archive ↗</a>
 </div>
 </div>
 
-<div class="bottom"><span>Empire No. 30 — 100% — 30/30 — Lahore — Spck Mobile Only — Oct 2026</span><span class="sig">@4t_jagga — 30 🔥 — Empire Complete</span></div>
+<div class="bottom"><span>Empire No. 30 — 100% — 30/30 — Lahore — Spck Mobile Only — Oct 2026 — Congratulations!</span><span class="sig">@4t_jagga — 30 🔥 — Empire Complete</span></div>
 </div>
 <script>
+function playCongrats(){
+const a=document.getElementById('congratsAudio');
+const b=document.getElementById('playBtn');
+a.volume=0.6;
+a.play();
+if(b){b.textContent='🎉 Playing...';b.style.background='#fff';}
+}
 function upd(){
 const now=new Date();
 const pk=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
@@ -155,6 +203,7 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
+document.addEventListener('click',function first(){playCongrats();document.removeEventListener('click',first)},{once:true});
 </script>
 </body>
 </html>
