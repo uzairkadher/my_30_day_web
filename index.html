@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 16 / THE SECOND HALF</title>
+<title>@4t_jagga — DAY 17 / THE VAULT</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#020305;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.18);background:radial-gradient(100% 100% at 0% 0%,rgba(212,175,55,0.06),transparent 50%),linear-gradient(180deg,rgba(255,255,255,0.015),rgba(0,0,0,0.4));padding:42px;position:relative;}
+body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.2);background:radial-gradient(100% 80% at 50% 0%,rgba(212,175,55,0.07),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.2));padding:42px;position:relative;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,37 +24,35 @@ body{min-height:100vh;background:#020305;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:22px;align-items:center;margin-bottom:28px;}
-@media(max-width:800px){.hero{grid-template-columns:1fr;}}
-.hero-left .tag{font-size:9px;letter-spacing:4px;color:#D4AF37;border:1px solid rgba(212,175,55,0.2);display:inline-block;padding:6px 12px;margin-bottom:14px;background:rgba(212,175,55,0.05);text-transform:uppercase;}
-.hero-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:0.9;}
-.hero-left h1 em{color:#D4AF37;font-style:italic;}
-.hero-left h1 b{color:#555;font-weight:300;text-decoration:line-through;font-size:0.7em;}
-.hero-left p{margin-top:14px;max-width:500px;font-size:12px;line-height:1.9;color:rgba(245,242,237,0.45);font-weight:200;}
-.split{border:1px solid rgba(212,175,55,0.12);background:#080a0f;padding:0;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;}
-.split::before{content:'VS';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:#0a0a0a;border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1px;color:#D4AF37;z-index:2;}
-@media(max-width:600px){.split{grid-template-columns:1fr;}.split::before{display:none;}}
-.side{padding:18px;}
-.side.old{opacity:0.35;}
-.side.new{background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));}
-.side .k{font-size:8px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;opacity:0.5;}
-.side.new .k{color:#D4AF37;opacity:1;}
-.side ul{list-style:none;padding:0;}
-.side li{font-size:11px;line-height:1.7;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;}
-.side li span:last-child{color:rgba(245,242,237,0.6);}
-.side.new li span:last-child{color:#D4AF37;font-family:'Cormorant Garamond',serif;}
-.stats16{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 26px;}
-@media(max-width:700px){.stats16{grid-template-columns:repeat(2,1fr);}}
-.s16{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:14px;text-align:center;}
-.s16.gold{border-color:rgba(212,175,55,0.22);background:rgba(212,175,55,0.06);}
-.s16 .k{font-size:8px;letter-spacing:3px;opacity:0.35;text-transform:uppercase;margin-bottom:6px;}
-.s16 .v{font-family:'Cormorant Garamond',serif;font-size:20px;}
-.s16.gold .v{color:#D4AF37;}
-.btn{border:1px solid #D4AF37;padding:12px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;justify-content:center;}
-.btn-gold{background:#D4AF37;color:#000;width:100%;}
+.hero{text-align:center;margin-bottom:30px;}
+.vault-icon{width:72px;height:72px;margin:0 auto 16px;border:1px solid #D4AF37;background:linear-gradient(145deg,rgba(212,175,55,0.15),rgba(212,175,55,0.02));display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 0 30px rgba(212,175,55,0.15);}
+.hero .tag{font-size:9px;letter-spacing:4px;color:#D4AF37;border:1px solid rgba(212,175,55,0.2);padding:6px 12px;display:inline-block;background:rgba(212,175,55,0.05);text-transform:uppercase;margin-bottom:14px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,58px);font-weight:300;line-height:0.9;}
+.hero h1 em{color:#D4AF37;font-style:italic;}
+.hero p{margin:12px auto 0;max-width:520px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;}
+.vault-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px;}
+@media(max-width:800px){.vault-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:400px){.vault-grid{grid-template-columns:1fr;}}
+.vitem{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:14px;position:relative;overflow:hidden;transition:0.3s;}
+.vitem::before{content:'';position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);opacity:0;transition:0.3s;}
+.vitem:hover{border-color:rgba(212,175,55,0.22);background:rgba(212,175,55,0.04);}
+.vitem:hover::before{opacity:1;}
+.vitem .num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;}
+.vitem .num i{font-style:normal;font-size:7px;border:1px solid rgba(212,175,55,0.2);padding:2px 5px;background:rgba(212,175,55,0.06);}
+.vitem h3{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;margin-bottom:4px;}
+.vitem p{font-size:9px;line-height:1.6;color:rgba(245,242,237,0.35);letter-spacing:0.5px;}
+.vitem.locked{opacity:0.2;}
+.vitem.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,0.12);background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));}
+.vitem.active .num{color:#D4AF37;}
+.lock-panel{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;border:1px solid #D4AF37;background:linear-gradient(90deg,rgba(212,175,55,0.1),rgba(212,175,55,0.02));padding:18px;margin-bottom:26px;}
+@media(max-width:600px){.lock-panel{grid-template-columns:1fr;}}
+.lock-panel h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;}
+.lock-panel p{font-size:10px;line-height:1.7;color:rgba(245,242,237,0.45);margin-top:6px;}
+.btn{border:1px solid #D4AF37;padding:11px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;justify-content:center;}
+.btn-gold{background:#D4AF37;color:#000;}
 .btn-gold:hover{background:#E8C766;}
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:53.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.bar i{position:absolute;left:0;top:0;height:100%;width:56.6%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
@@ -70,7 +68,7 @@ body{min-height:100vh;background:#020305;color:#F5F2ED;font-family:'Manrope',san
 <body>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — SECOND HALF — DAY 16 / 30 — WARMUP OVER</div>
+<div class="top-left">@4t_jagga — THE VAULT — DAY 17 / 30 — 17 SITES LOCKED</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
@@ -78,56 +76,50 @@ body{min-height:100vh;background:#020305;color:#F5F2ED;font-family:'Manrope',san
 </div>
 
 <div class="hero">
-<div class="hero-left">
-<div class="tag">● DAY 16 — SECOND HALF — 53.3% — WAR MODE</div>
-<h1>First Half <b>Warmup.</b> <em>Second Half War.</em></h1>
-<p>15 days got us here. Next 15 will define us. No more soft launches. Darker, faster, sharper. Lahore doesn't sleep, neither does the empire.</p>
-<div style="margin-top:16px;">
-<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Second Half Begins — IG ↗</a>
-</div>
-</div>
-<div class="split">
-<div class="side old">
-<div class="k">First Half — Done</div>
-<ul>
-<li><span>Days 01-15</span><span>50% Built</span></li>
-<li><span>Energy</span><span>Learning</span></li>
-<li><span>Style</span><span>Soft Luxury</span></li>
-<li><span>Proof</span><span>Consistency</span></li>
-<li><span>Result</span><span>15 Sites</span></li>
-</ul>
-</div>
-<div class="side new">
-<div class="k">Second Half — Now</div>
-<ul>
-<li><span>Days 16-30</span><span>Empire Finish</span></li>
-<li><span>Energy</span><span>War Mode</span></li>
-<li><span>Style</span><span>Sharp Luxury</span></li>
-<li><span>Proof</span><span>Domination</span></li>
-<li><span>Result</span><span>Legacy</span></li>
-</ul>
-</div>
-</div>
+<div class="vault-icon">🔐</div>
+<div class="tag">● SECURE VAULT — 17 SITES — GOLD ENCRYPTED — LAHORE</div>
+<h1>All Sites <em>in the Vault.</em></h1>
+<p>17 days, 17 luxury builds — locked, listed, and guarded. From Landing to Second Half, everything in one place. The empire's safe.</p>
 </div>
 
-<div class="stats16">
-<div class="s16 gold"><div class="k">Day</div><div class="v">16 / 30</div></div>
-<div class="s16 gold"><div class="k">Progress</div><div class="v">53.3%</div></div>
-<div class="s16"><div class="k">Mode</div><div class="v">War ⚫</div></div>
-<div class="s16"><div class="k">Streak</div><div class="v">16 🔥</div></div>
+<div class="vault-grid">
+<div class="vitem"><div class="num"><span>DAY 01</span><i>✓ FORGED</i></div><h3>Landing</h3><p>Where it all began — first brick.</p></div>
+<div class="vitem"><div class="num"><span>DAY 05</span><i>✓ FORGED</i></div><h3>Monarch</h3><p>Crown era — gold on black.</p></div>
+<div class="vitem"><div class="num"><span>DAY 07</span><i>✓ FORGED</i></div><h3>Week One</h3><p>7 days streak proof.</p></div>
+<div class="vitem"><div class="num"><span>DAY 08</span><i>✓ FORGED</i></div><h3>Signal</h3><p>Broadcast to world.</p></div>
+<div class="vitem"><div class="num"><span>DAY 09</span><i>✓ FORGED</i></div><h3>Archive</h3><p>History preserved.</p></div>
+<div class="vitem"><div class="num"><span>DAY 10</span><i>✓ FORGED</i></div><h3>Map</h3><p>Lahore to world map.</p></div>
+<div class="vitem"><div class="num"><span>DAY 11</span><i>✓ FORGED</i></div><h3>The Edit</h3><p>Director's cut.</p></div>
+<div class="vitem"><div class="num"><span>DAY 12</span><i>✓ FORGED</i></div><h3>The Drop</h3><p>Street luxury drop.</p></div>
+<div class="vitem"><div class="num"><span>DAY 13</span><i>✓ FORGED</i></div><h3>Studio</h3><p>Behind the forge.</p></div>
+<div class="vitem"><div class="num"><span>DAY 14</span><i>✓ FORGED</i></div><h3>Half Moon</h3><p>2 weeks witnessed.</p></div>
+<div class="vitem"><div class="num"><span>DAY 15</span><i>★ 50%</i></div><h3>The Half</h3><p>50% empire milestone.</p></div>
+<div class="vitem"><div class="num"><span>DAY 16</span><i>⚫ WAR</i></div><h3>Second Half</h3><p>War mode activated.</p></div>
+<div class="vitem active"><div class="num"><span>DAY 17</span><i>🔐 VAULT</i></div><h3>The Vault</h3><p>All sites locked — today.</p></div>
+<div class="vitem locked"><div class="num"><span>DAY 18</span><i>LOCKED</i></div><h3>Locked</h3><p>Tomorrow unlocks.</p></div>
+<div class="vitem locked"><div class="num"><span>DAY 20</span><i>LOCKED</i></div><h3>Locked</h3><p>Coming soon.</p></div>
+<div class="vitem locked"><div class="num"><span>DAY 30</span><i>LOCKED</i></div><h3>Empire</h3><p>Final empire — Day 30.</p></div>
+</div>
+
+<div class="lock-panel">
+<div>
+<h3>🔐 Vault Secured — 56.6% Empire</h3>
+<p>17 luxury sites encrypted in gold. From Spck mobile in Lahore, every site live on my30dayweb.vercel.app — no zero days, no excuses. Vault is sealed until Day 30.</p>
+</div>
+<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Unlock — IG ↗</a>
 </div>
 
 <div class="bar"><i></i></div>
 <div class="vault">
-<div class="card done"><div class="num">DAY 13</div><h3>Studio</h3></div>
 <div class="card done"><div class="num">DAY 14</div><h3>Half Moon</h3></div>
 <div class="card done"><div class="num">DAY 15</div><h3>The Half</h3></div>
-<div class="card active"><div class="num">DAY 16</div><h3>Second Half</h3></div>
-<div class="card locked"><div class="num">DAY 17</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 16</div><h3>2nd Half</h3></div>
+<div class="card active"><div class="num">DAY 17</div><h3>Vault</h3></div>
+<div class="card locked"><div class="num">DAY 18</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
-<div class="bottom"><span>EST. LAHORE 2026 — 53.3% — SECOND HALF — WAR MODE ON</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — 56.6% — VAULT SECURED — 17 SITES ENCRYPTED</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
