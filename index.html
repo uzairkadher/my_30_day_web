@@ -3,133 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 20 / THE BILLBOARD</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Manrope:wght@200;300;600;800&family=Anton&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 21 / THE RUNWAY</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@200;300&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#09090b;color:#fff;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
-.wrap{width:100%;max-width:1040px;border:2px solid #fff;background:#0a0a0a;box-shadow:10px 10px 0 #fff;overflow:hidden;position:relative;}
-.topbar{background:#fff;color:#000;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-.topbar .l{font-size:9px;letter-spacing:4px;font-weight:800;text-transform:uppercase;}
-.topbar .m{display:flex;align-items:center;gap:10px;}
-.mini-case{width:26px;height:26px;border-radius:50%;background:#111;padding:1px;position:relative;}
+body{min-height:100vh;background:#f7f3ef;color:#111;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:20px 14px;}
+.wrap{width:100%;max-width:1080px;border:1px solid #111;background:#fff;overflow:hidden;position:relative;box-shadow:12px 12px 0 #111;}
+.topbar{padding:10px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid #111;background:#111;color:#f7f3ef;}
+.topbar .l{font-size:9px;letter-spacing:4px;text-transform:uppercase;}
+.topbar .m{font-family:'Playfair Display',serif;font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;}
+.topbar .r{display:flex;align-items:center;gap:10px;}
+.mini-case{width:24px;height:24px;border-radius:50%;background:#222;padding:1px;position:relative;}
 .mini-glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#1a2a4a,#040508);position:relative;overflow:hidden;}
-.mini-orbit{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid rgba(255,255,255,0.1);border-radius:50%;animation:spin 6s linear infinite;}
-.mini-planet{position:absolute;width:3px;height:3px;border-radius:50%;top:-1px;left:50%;margin-left:-1px;background:#D4AF37;}
-.mini-center{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
+.mini-orbit{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border:1px solid rgba(255,255,255,0.1);border-radius:50%;animation:spin 6s linear infinite;}
+.mini-planet{position:absolute;width:2px;height:2px;border-radius:50%;top:-1px;left:50%;margin-left:-1px;background:#D4AF37;}
+.mini-center{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
 .mini-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;}
-.mini-h{width:1px;height:3px;background:#D4AF37;margin-left:-0.5px;}
-.mini-m{width:1px;height:4px;background:#fff;margin-left:-0.5px;}
-.time-mini{font-size:9px;letter-spacing:1px;color:#000;font-family:'Manrope',sans-serif;font-weight:800;}
-.time-mini b{color:#8a6d1b;}
+.mini-h{width:1px;height:2.5px;background:#D4AF37;margin-left:-0.5px;}
+.mini-m{width:1px;height:3.5px;background:#fff;margin-left:-0.5px;}
+.time-mini{font-size:9px;letter-spacing:1px;color:#f7f3ef;}
+.time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.billboard{background:#111;border-bottom:2px solid #fff;padding:28px 24px;position:relative;overflow:hidden;}
-.billboard::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,0.02) 39px 40px);}
-.bill-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;position:relative;z-index:1;}
-.bill-top .loc{font-size:9px;letter-spacing:4px;background:#D4AF37;color:#000;padding:6px 10px;font-weight:800;text-transform:uppercase;}
-.bill-top .live{font-size:9px;letter-spacing:3px;border:1px solid #fff;padding:5px 10px;display:flex;align-items:center;gap:6px;text-transform:uppercase;}
-.bill-top .live i{width:6px;height:6px;background:#ff3b30;border-radius:50%;display:inline-block;animation:blink 1s infinite;}
-@keyframes blink{50%{opacity:0;}}
-.billboard h1{font-family:'Anton',sans-serif;font-size:clamp(44px,9vw,96px);line-height:0.85;letter-spacing:1px;text-transform:uppercase;position:relative;z-index:1;}
-.billboard h1 .gold{color:#D4AF37;-webkit-text-stroke:1px #D4AF37;text-stroke:1px #D4AF37;}
-.billboard h1 .outline{color:transparent;-webkit-text-stroke:1.5px #fff;}
-.bill-sub{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-top:16px;position:relative;z-index:1;}
-.bill-sub p{font-size:11px;line-height:1.7;color:rgba(255,255,255,0.5);max-width:460px;}
-.bill-sub .stats{display:flex;gap:12px;}
-.stat-b{border:1px solid #fff;padding:8px 12px;text-align:center;min-width:68px;background:#fff;color:#000;}
-.stat-b.g{background:#D4AF37;border-color:#D4AF37;}
-.stat-b .k{font-size:7px;letter-spacing:2px;text-transform:uppercase;opacity:0.6;font-weight:800;}
-.stat-b .v{font-family:'Anton',sans-serif;font-size:18px;}
-.led{border-top:2px solid #fff;border-bottom:2px solid #fff;background:#000;padding:8px 0;overflow:hidden;white-space:nowrap;}
-.led-inner{display:inline-flex;animation:marquee 18s linear infinite;}
-.led-inner span{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;padding-right:40px;color:#D4AF37;}
-@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:2px solid #fff;background:#0a0a0a;}
-@media(max-width:700px){.city-grid{grid-template-columns:1fr;}}
-.cg{padding:16px 20px;border-right:2px solid #fff;position:relative;}
-.cg:last-child{border-right:none;}
-@media(max-width:700px){.cg{border-right:none;border-bottom:2px solid #fff;}.cg:last-child{border-bottom:none;}}
-.cg .k{font-size:8px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:8px;font-weight:800;}
-.cg h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;line-height:0.95;margin-bottom:6px;}
-.cg p{font-size:10px;line-height:1.6;color:rgba(255,255,255,0.45);}
-.cg.active{background:#D4AF37;color:#000;}
-.cg.active p{color:rgba(0,0,0,0.6);}
-.cg.active .k{opacity:0.6;}
-.bar{height:6px;background:#fff;position:relative;overflow:hidden;}
-.bar i{position:absolute;left:0;top:0;bottom:0;width:66.6%;background:#D4AF37;}
-.vault{padding:14px 20px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;background:#09090b;}
+.hero{padding:26px 24px 0;display:grid;grid-template-columns:1fr 0.9fr;gap:18px;align-items:end;}
+@media(max-width:800px){.hero{grid-template-columns:1fr;}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,82px);line-height:0.85;letter-spacing:-2px;text-transform:uppercase;font-weight:900;}
+.hero h1 em{font-style:italic;text-transform:none;font-weight:900;color:#8a6d1b;}
+.hero h1 .thin{font-weight:300;font-family:'Cormorant Garamond',serif;letter-spacing:-1px;text-transform:none;font-size:0.7em;}
+.hero-right{text-align:right;padding-bottom:8px;}
+@media(max-width:800px){.hero-right{text-align:left;}}
+.hero-right .tag{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#8a6d1b;margin-bottom:8px;}
+.hero-right p{font-size:11px;line-height:1.7;color:#666;max-width:360px;margin-left:auto;}
+@media(max-width:800px){.hero-right p{margin-left:0;}}
+.runway{margin:18px 0 0;border-top:3px solid #111;border-bottom:3px solid #111;background:#f7f3ef;position:relative;overflow:hidden;height:118px;display:flex;align-items:center;}
+.runway-track{position:absolute;left:50%;top:50%;width:90%;height:1px;background:repeating-linear-gradient(90deg,#111 0 16px,transparent 16px 28px);transform:translate(-50%,-50%);}
+.runway-models{display:flex;gap:0;width:100%;position:relative;z-index:1;animation:walk 22s linear infinite;}
+.runway-models .look{flex:0 0 18%;text-align:center;padding:10px 6px;border-right:1px solid rgba(0,0,0,0.08);}
+.look .hanger{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:4px;}
+.look .name{font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+.look .sub{font-size:7px;letter-spacing:1px;opacity:0.4;text-transform:uppercase;margin-top:2px;}
+.look.active .hanger{color:#8a6d1b;}
+.look.active .name{color:#8a6d1b;}
+@keyframes walk{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.collection{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #111;}
+@media(max-width:700px){.collection{grid-template-columns:1fr;}}
+.c{padding:16px 20px;border-right:1px solid #111;background:#fff;}
+.c:last-child{border-right:none;}
+@media(max-width:700px){.c{border-right:none;border-bottom:1px solid #111;}.c:last-child{border-bottom:none;}}
+.c .k{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#8a6d1b;margin-bottom:8px;font-weight:600;}
+.c h3{font-family:'Playfair Display',serif;font-size:20px;line-height:0.95;margin-bottom:6px;}
+.c p{font-size:10px;line-height:1.6;color:#666;}
+.c.active{background:#111;color:#f7f3ef;}
+.c.active p{color:rgba(247,243,239,0.5);}
+.c.active .k{color:#D4AF37;}
+.stats21{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #111;background:#111;color:#f7f3ef;}
+@media(max-width:600px){.stats21{grid-template-columns:repeat(2,1fr);}}
+.s21{padding:12px 16px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
+.s21:last-child{border-right:none;}
+.s21 .k{font-size:8px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:4px;}
+.s21 .v{font-family:'Playfair Display',serif;font-size:18px;color:#D4AF37;}
+.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:#f7f3ef;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
-.card{border:1px solid rgba(255,255,255,0.15);padding:10px;text-align:center;background:rgba(255,255,255,0.02);}
-.card .num{font-size:7px;letter-spacing:2px;color:#D4AF37;margin-bottom:3px;font-weight:800;}
-.card h3{font-family:'Anton',sans-serif;font-size:11px;text-transform:uppercase;}
-.card.active{border-color:#fff;background:#fff;color:#000;}
+.card{border-right:1px solid #111;border-bottom:1px solid #111;padding:12px;text-align:center;background:#fff;}
+.card .num{font-size:7px;letter-spacing:2px;color:#8a6d1b;margin-bottom:3px;font-weight:700;}
+.card h3{font-family:'Playfair Display',serif;font-size:11px;}
+.card.active{background:#111;color:#f7f3ef;}
 .card.done{opacity:0.5;}
 .card.locked{opacity:0.18;}
-.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 20px;background:#fff;color:#000;}
-.action h3{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;}
-.action p{font-size:10px;opacity:0.6;}
-.btn{border:2px solid #000;padding:10px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:800;transition:0.2s;}
-.btn-b{background:#000;color:#fff;}
-.btn-b:hover{background:#222;}
-.bottom{background:#000;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;flex-wrap:wrap;gap:8px;border-top:2px solid #fff;}
-.sig{font-family:'Cormorant Garamond',serif;font-size:16px;color:#D4AF37;text-transform:none;letter-spacing:0;font-style:italic;font-weight:600;}
+.action{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 20px;background:#f7f3ef;border-top:1px solid #111;}
+.action h3{font-family:'Playfair Display',serif;font-size:16px;}
+.action p{font-size:10px;color:#666;}
+.btn{border:1.5px solid #111;padding:10px 16px;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;transition:0.2s;}
+.btn-b{background:#111;color:#f7f3ef;}
+.bottom{padding:10px 20px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:3px;text-transform:uppercase;background:#111;color:#f7f3ef;flex-wrap:wrap;gap:8px;}
+.sig{font-family:'Playfair Display',serif;font-size:14px;color:#D4AF37;text-transform:none;letter-spacing:0;font-style:italic;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="topbar">
-<div class="l">@4t_jagga — Billboard — Day 20 / 30 — Times Square x Lahore</div>
-<div class="m">
+<div class="l">@4t_jagga — Day 21 — Runway — Lahore Fashion Week — 70% Empire</div>
+<div class="m">Lahore Fashion Week FW26</div>
+<div class="r">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
-<div class="time-mini" id="miniTime"><b>00:00</b> AM — PKT</div>
+<div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
 
-<div class="billboard">
-<div class="bill-top">
-<div class="loc">📍 Lahore → Times Square → World</div>
-<div class="live"><i></i> Live Billboard — 66.6% Empire</div>
-</div>
-<h1><span class="outline">20 SITES IN</span><br><span class="gold">20 DAYS</span><br><span class="outline">FROM PHONE.</span></h1>
-<div class="bill-sub">
-<p>20 luxury websites forged entirely from Spck mobile editor. No laptop, no team, no zero days. The empire now stands at two-thirds complete — my30dayweb.vercel.app live 24/7.</p>
-<div class="stats">
-<div class="stat-b"><div class="k">Day</div><div class="v">20 / 30</div></div>
-<div class="stat-b g"><div class="k">Done</div><div class="v">66.6%</div></div>
-<div class="stat-b"><div class="k">Streak</div><div class="v">20 🔥</div></div>
-</div>
+<div class="hero">
+<h1>The <em>Runway</em><br><span class="thin">21 looks in 21 days —</span><br>from phone.</h1>
+<div class="hero-right">
+<div class="tag">FW26 Collection — 70% — Spck Mobile Atelier</div>
+<p>21 luxury websites presented as couture looks — each forged from Spck mobile editor. No atelier team, no laptop — just Lahore, late nights, and 21 consecutive runway drops.</p>
 </div>
 </div>
 
-<div class="led"><div class="led-inner">
-<span>@4t_jagga — 20 Sites in 20 Days — Lahore — Spck Mobile — No Zero Days — 66.6% Empire —</span>
-<span>@4t_jagga — 20 Sites in 20 Days — Lahore — Spck Mobile — No Zero Days — 66.6% Empire —</span>
-<span>@4t_jagga — 20 Sites in 20 Days — Lahore — Spck Mobile — No Zero Days — 66.6% Empire —</span>
-</div></div>
-
-<div class="city-grid">
-<div class="cg"><div class="k">Day 18 — The Press</div><h3>Newspaper<br>Headline</h3><p>Extra extra — Lahore boy in press.</p></div>
-<div class="cg"><div class="k">Day 19 — Gold Ticket</div><h3>Golden<br>Ticket Drop</h3><p>Invite only access to empire.</p></div>
-<div class="cg active"><div class="k">Day 20 — Today — Active</div><h3>Billboard<br>Takeover</h3><p>Times Square style — 66.6% — 20 sites live worldwide.</p></div>
+<div class="runway">
+<div class="runway-track"></div>
+<div class="runway-models">
+<div class="look"><div class="hanger">👗</div><div class="name">Day 18 — Press</div><div class="sub">Newspaper</div></div>
+<div class="look"><div class="hanger">👜</div><div class="name">Day 19 — Ticket</div><div class="sub">Gold Access</div></div>
+<div class="look"><div class="hanger">👠</div><div class="name">Day 20 — Billboard</div><div class="sub">Times Square</div></div>
+<div class="look active"><div class="hanger">✨</div><div class="name">Day 21 — Runway</div><div class="sub">70% — Today</div></div>
+<div class="look"><div class="hanger">💎</div><div class="name">Day 22 — Locked</div><div class="sub">Next Look</div></div>
+<div class="look"><div class="hanger">👑</div><div class="name">Day 30 — Finale</div><div class="sub">Empire</div></div>
+<div class="look"><div class="hanger">👗</div><div class="name">Day 18 — Press</div><div class="sub">Newspaper</div></div>
+<div class="look"><div class="hanger">👜</div><div class="name">Day 19 — Ticket</div><div class="sub">Gold Access</div></div>
+<div class="look"><div class="hanger">👠</div><div class="name">Day 20 — Billboard</div><div class="sub">Times Square</div></div>
+<div class="look active"><div class="hanger">✨</div><div class="name">Day 21 — Runway</div><div class="sub">70% — Today</div></div>
+</div>
 </div>
 
-<div class="bar"><i></i></div>
+<div class="collection">
+<div class="c"><div class="k">Look 18 — Editorial</div><h3>The Press Cover</h3><p>Newspaper headline — Lahore boy builds empire — extra extra.</p></div>
+<div class="c"><div class="k">Look 19 — Invite</div><h3>Gold Ticket Drop</h3><p>Invite only access — perforated, stamped, Lahore forged.</p></div>
+<div class="c active"><div class="k">Look 21 — Today — 70%</div><h3>Runway Takeover</h3><p>21 looks in 21 days — couture websites from phone — FW26 collection live.</p></div>
+</div>
+
+<div class="stats21">
+<div class="s21"><div class="k">Collection</div><div class="v">21 / 30</div></div>
+<div class="s21"><div class="k">Progress</div><div class="v">70%</div></div>
+<div class="s21"><div class="k">Looks</div><div class="v">21 🔥</div></div>
+<div class="s21"><div class="k">Atelier</div><div class="v">Lahore</div></div>
+</div>
 
 <div class="vault">
-<div class="card done"><div class="num">DAY 17</div><h3>Vault</h3></div>
 <div class="card done"><div class="num">DAY 18</div><h3>Press</h3></div>
-<div class="card done"><div class="num">DAY 19</div><h3>Gold Tkt</h3></div>
-<div class="card active"><div class="num">DAY 20</div><h3>Billboard</h3></div>
-<div class="card locked"><div class="num">DAY 21</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 19</div><h3>Ticket</h3></div>
+<div class="card done"><div class="num">DAY 20</div><h3>Billboard</h3></div>
+<div class="card active"><div class="num">DAY 21</div><h3>Runway</h3></div>
+<div class="card locked"><div class="num">DAY 22</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
 <div class="action">
-<div><h3>Seen from Lahore to Times Square</h3><p>20/30 forged — 10 days to final empire</p></div>
-<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">View on IG ↗</a>
+<div><h3>FW26 — 21 Looks — From Lahore Phone Atelier</h3><p>9 days to finale — no zero days — Spck mobile only</p></div>
+<a class="btn btn-b" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Front Row — IG ↗</a>
 </div>
 
-<div class="bottom"><span>Est. Lahore 2026 — 20 Sites — Billboard Edition — Spck Mobile — No Team</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>Lahore FW26 — Day 21 — Runway Edition — 70% — No Team — Spck</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
@@ -141,7 +152,7 @@ if(mh) mh.style.transform=`translateX(-50%) rotate(${h*30 + m*0.5}deg)`;
 if(mm) mm.style.transform=`translateX(-50%) rotate(${m*6}deg)`;
 let hh=pk.getHours(); let ap=hh>=12?'PM':'AM'; hh=hh%12||12;
 const el=document.getElementById('miniTime');
-if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap} — PKT`;
+if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
 </script>
