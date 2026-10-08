@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 10 / THE ARCHIVE</title>
+<title>@4t_jagga — DAY 11 / THE EDIT</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.06),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.05),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;}
 @media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
@@ -24,39 +24,38 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero{display:grid;grid-template-columns:1fr 180px;gap:20px;align-items:center;margin-bottom:28px;}
-@media(max-width:800px){.hero{grid-template-columns:1fr;}}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,58px);font-weight:300;line-height:0.9;}
+.hero{margin-bottom:26px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.hero h1 i{font-style:normal;color:rgba(245,242,237,0.2);font-size:0.5em;vertical-align:super;}
-.big10{border:1px solid #D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));padding:18px;text-align:center;position:relative;}
-.big10::before{content:'';position:absolute;inset:6px;border:1px solid rgba(212,175,55,0.15);pointer-events:none;}
-.big10 .n{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:#D4AF37;line-height:0.9;}
-.big10 .l{font-size:9px;letter-spacing:4px;color:#D4AF37;margin-top:8px;text-transform:uppercase;}
-
-.archive{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;}
-@media(max-width:700px){.archive{grid-template-columns:1fr;}}
-.a-item{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);padding:16px;display:flex;gap:14px;align-items:center;transition:0.3s;}
-.a-item:hover{border-color:rgba(212,175,55,0.2);background:rgba(212,175,55,0.02);}
-.a-item.done{border-color:rgba(212,175,55,0.15);}
-.a-item.active{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.08),rgba(212,175,55,0.01));box-shadow:0 0 20px rgba(212,175,55,0.1);}
-.a-num{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(245,242,237,0.5);}
-.a-item.done .a-num{background:#D4AF37;color:#000;border-color:#D4AF37;}
-.a-item.active .a-num{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,0.1);}
-.a-info b{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;display:block;}
-.a-info span{font-size:9px;letter-spacing:2px;opacity:0.35;text-transform:uppercase;}
-.a-info i{font-style:normal;font-size:10px;color:#D4AF37;margin-left:6px;}
-
-.signal{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
-.signal a{flex:1;min-width:160px;border:1px solid rgba(255,255,255,0.07);padding:14px 16px;background:rgba(255,255,255,0.01);display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:inherit;transition:0.3s;}
-.signal a:hover{border-color:rgba(212,175,55,0.4);}
-.signal a.gold{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));}
-.signal .k{font-size:9px;letter-spacing:3px;opacity:0.4;text-transform:uppercase;}
-.signal .v{font-family:'Cormorant Garamond',serif;font-size:14px;margin-top:4px;}
-.signal .ar{color:#D4AF37;}
-
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;}
+@media(max-width:750px){.services{grid-template-columns:1fr;}}
+.s-card{border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.01);padding:18px;transition:0.3s;position:relative;overflow:hidden;}
+.s-card:hover{border-color:rgba(212,175,55,0.3);transform:translateY(-2px);}
+.s-card.gold{border-color:#D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.1),rgba(212,175,55,0.02));}
+.s-card .tag{font-size:8px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;margin-bottom:10px;}
+.s-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:8px;}
+.s-card p{font-size:10px;line-height:1.6;color:rgba(245,242,237,0.4);font-weight:200;margin-bottom:12px;}
+.s-card .price{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;}
+.edit-bar{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+.edit-bar span{border:1px solid rgba(255,255,255,0.08);padding:8px 14px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,242,237,0.4);background:rgba(255,255,255,0.01);}
+.edit-bar span.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,0.06);}
+.cta{display:grid;grid-template-columns:1.2fr 0.8fr;gap:12px;margin-bottom:26px;}
+@media(max-width:750px){.cta{grid-template-columns:1fr;}}
+.cta-box{border:1px solid rgba(212,175,55,0.18);background:linear-gradient(180deg,rgba(212,175,55,0.06),rgba(0,0,0,0.2));padding:20px;}
+.cta-box h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:8px;}
+.cta-box p{font-size:11px;color:rgba(245,242,237,0.4);line-height:1.7;font-weight:200;margin-bottom:14px;}
+.btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{border:1px solid #D4AF37;padding:10px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:0.3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-gold{background:#D4AF37;color:#000;}
+.btn-gold:hover{background:#E8C766;}
+.btn-ghost{color:#D4AF37;background:transparent;}
+.btn-ghost:hover{background:rgba(212,175,55,0.08);}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{border:1px solid rgba(255,255,255,0.06);padding:12px 14px;background:rgba(255,255,255,0.01);min-width:100px;}
+.stat .k{font-size:8px;letter-spacing:3px;color:rgba(245,242,237,0.3);text-transform:uppercase;margin-bottom:6px;}
+.stat .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:#D4AF37;}
 .bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:33.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.bar i{position:absolute;left:0;top:0;height:100%;width:36.6%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
 .vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
 .card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
@@ -72,7 +71,7 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 <body>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — THE ARCHIVE — DAY 10 / 30 — DOUBLE DIGITS</div>
+<div class="top-left">@4t_jagga — THE EDIT — DAY 11 / 30 — CLIENT READY</div>
 <div class="mini-clock">
 <div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
 <div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
@@ -80,49 +79,67 @@ body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',san
 </div>
 
 <div class="hero">
-<div>
-<h1>The <em>Archive</em> — <i>10/30</i></h1>
-<p style="margin-top:14px;max-width:480px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Double digits unlocked. Ten days, no zero days, from Lahore. Every drop sealed in gold. 33.3% empire complete.</p>
-</div>
-<div class="big10"><div class="n">10</div><div class="l">Days — Archive<br>33.3% Built</div></div>
+<h1>Now <em>open</em> for business.</h1>
+<p style="margin-top:12px;max-width:560px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">11 days building in public from Lahore. The portfolio is live, the signal is strong. If you need this energy for your brand — DM.</p>
 </div>
 
-<div class="archive">
-<div class="a-item done"><div class="a-num">01</div><div class="a-info"><b>Landing <i>✓</i></b><span>Day 01 — Idea Born</span></div></div>
-<div class="a-item done"><div class="a-num">02</div><div class="a-info"><b>The Code <i>✓</i></b><span>Day 02 — System</span></div></div>
-<div class="a-item done"><div class="a-num">03</div><div class="a-info"><b>Execution <i>✓</i></b><span>Day 03 — Ship</span></div></div>
-<div class="a-item done"><div class="a-num">04</div><div class="a-info"><b>Golden Hour <i>✓</i></b><span>Day 04 — Luxury</span></div></div>
-<div class="a-item done"><div class="a-num">05</div><div class="a-info"><b>Astronomia <i>✓</i></b><span>Day 05 — Planets</span></div></div>
-<div class="a-item done"><div class="a-num">06</div><div class="a-info"><b>Atelier <i>✓</i></b><span>Day 06 — Vault</span></div></div>
-<div class="a-item done"><div class="a-num">07</div><div class="a-info"><b>Week One <i>★</i></b><span>Day 07 — Gold Seal</span></div></div>
-<div class="a-item done"><div class="a-num">08</div><div class="a-info"><b>The Map <i>↗</i></b><span>Day 08 — Empire Map</span></div></div>
-<div class="a-item done"><div class="a-num">09</div><div class="a-info"><b>The Signal <i>📡</i></b><span>Day 09 — Live Broadcast</span></div></div>
-<div class="a-item active"><div class="a-num">10</div><div class="a-info"><b>The Archive <i>● LIVE</i></b><span>Day 10 — Double Digits</span></div></div>
+<div class="edit-bar">
+<span class="active">● Editing Live</span><span>Portfolio Mode</span><span>Client Ready</span><span>Lahore — PKT</span>
 </div>
 
-<div class="signal">
-<a class="gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener"><div><div class="k">Instagram — Follow</div><div class="v">@4t_jagga</div></div><div class="ar">★</div></a>
-<a href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener"><div><div class="k">DM</div><div class="v">Collab</div></div><div class="ar">↗</div></a>
-<a href="https://my30dayweb.vercel.app" target="_blank" rel="noopener"><div><div class="k">Archive</div><div class="v">Live Site</div></div><div class="ar">↗</div></a>
+<div class="services">
+<div class="s-card gold">
+<div class="tag">Most Requested</div>
+<h3>Luxury Landing</h3>
+<p>One-page empire like my30dayweb. Cormorant + gold + astro. Built in Spck, shipped same day.</p>
+<div class="price">$150 — 24h Delivery</div>
+</div>
+<div class="s-card">
+<div class="tag">Signature</div>
+<h3>Astro Brand Site</h3>
+<p>Watch / orbit / time — tumhari Day 04-10 jaisi luxury motion site. Premium feel.</p>
+<div class="price">$250 — 48h</div>
+</div>
+<div class="s-card">
+<div class="tag">Full Atelier</div>
+<h3>30-Day System</h3>
+<p>Poora map, vault, signal — jo main bana raha hu wahi tumhare brand ke liye. Daily drops.</p>
+<div class="price">$500 — 7 Days</div>
+</div>
+</div>
+
+<div class="cta">
+<div class="cta-box">
+<h4>Work with @4t_jagga</h4>
+<p>11/30 empire built live. No agency. Direct from Lahore. You saw the whole journey — now get your own. DM on Instagram, I reply in hours.</p>
+<div class="btns">
+<a class="btn btn-gold" href="https://www.instagram.com/4t_jagga?stkn=Z3IyZ3Y0YWgwc3pi" target="_blank" rel="noopener">Instagram DM ↗</a>
+<a class="btn btn-ghost" href="https://my30dayweb.vercel.app" target="_blank" rel="noopener">View Live Proof</a>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><div class="k">Days Built</div><div class="v">11 / 30</div></div>
+<div class="stat"><div class="k">Progress</div><div class="v">36.6%</div></div>
+<div class="stat"><div class="k">Location</div><div class="v">Lahore</div></div>
+<div class="stat"><div class="k">Status</div><div class="v">Open</div></div>
+<div class="stat"><div class="k">Response</div><div class="v">&lt; 3h</div></div>
+<div class="stat"><div class="k">Proof</div><div class="v">Live</div></div>
+</div>
 </div>
 
 <div class="bar"><i></i></div>
 <div class="vault">
-<div class="card done"><div class="num">DAY 01</div><h3>Landing</h3></div>
-<div class="card done"><div class="num">DAY 02</div><h3>Code</h3></div>
-<div class="card done"><div class="num">DAY 03</div><h3>Exec</h3></div>
-<div class="card done"><div class="num">DAY 04</div><h3>Hour</h3></div>
-<div class="card done"><div class="num">DAY 05</div><h3>Astro</h3></div>
-<div class="card done"><div class="num">DAY 06</div><h3>Atelier</h3></div>
 <div class="card done"><div class="num">DAY 07</div><h3>Week 1</h3></div>
 <div class="card done"><div class="num">DAY 08</div><h3>Map</h3></div>
 <div class="card done"><div class="num">DAY 09</div><h3>Signal</h3></div>
-<div class="card active"><div class="num">DAY 10</div><h3>Archive</h3></div>
-<div class="card locked"><div class="num">DAY 11</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 10</div><h3>Archive</h3></div>
+<div class="card active"><div class="num">DAY 11</div><h3>Edit</h3></div>
+<div class="card locked"><div class="num">DAY 12</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">DAY 15</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
 
-<div class="bottom"><span>EST. LAHORE 2026 — 33.3% ARCHIVED — DOUBLE DIGITS</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — 36.6% — NOW OPEN FOR CLIENTS</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
 function upd(){
