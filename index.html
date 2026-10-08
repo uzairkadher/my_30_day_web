@@ -3,125 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 06 / ATELIER</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300;400&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 07 / WEEK ONE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(15,40,80,0.18),transparent 50%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.002));padding:42px;}
-@media(max-width:600px){.wrap{padding:24px 16px;}}
+body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;overflow-x:hidden;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(212,175,55,0.08),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.001));padding:42px;position:relative;z-index:1;}
+@media(max-width:600px){.wrap{padding:22px 14px;}}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 .top-left{font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;}
 .mini-clock{display:flex;align-items:center;gap:10px;border:1px solid rgba(212,175,55,0.15);padding:8px 12px;background:rgba(212,175,55,0.04);}
-.mini-case{width:48px;height:48px;border-radius:50%;background:linear-gradient(145deg,#2a2a2e,#0a0a0a);padding:2px;position:relative;flex-shrink:0;}
+.mini-case{width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,#2a2a2e,#0a0a0a);padding:2px;position:relative;}
 .mini-glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#0a1430,#02040a);position:relative;overflow:hidden;}
-.mini-orbit{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid rgba(255,255,255,0.06);border-radius:50%;animation:spin 6s linear infinite;}
-.mini-planet{position:absolute;width:6px;height:6px;border-radius:50%;top:-3px;left:50%;margin-left:-3px;background:#D4AF37;box-shadow:0 0 6px #D4AF37;}
-.mini-center{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
+.mini-orbit{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(255,255,255,0.06);border-radius:50%;animation:spin 6s linear infinite;}
+.mini-planet{position:absolute;width:5px;height:5px;border-radius:50%;top:-2px;left:50%;margin-left:-2px;background:#D4AF37;box-shadow:0 0 6px #D4AF37;}
+.mini-center{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#0f2040;border:0.5px solid #D4AF37;}
 .mini-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;}
-.mini-h{width:1px;height:6px;background:#D4AF37;margin-left:-0.5px;}
-.mini-m{width:1px;height:8px;background:#fff;margin-left:-0.5px;}
+.mini-h{width:1px;height:5px;background:#D4AF37;margin-left:-0.5px;}
+.mini-m{width:1px;height:7px;background:#fff;margin-left:-0.5px;}
 .time-mini{font-size:10px;letter-spacing:2px;color:rgba(245,242,237,0.5);font-family:'Cormorant Garamond',serif;}
 .time-mini b{color:#D4AF37;}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-.hero{margin-bottom:36px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,62px);font-weight:300;line-height:0.9;}
+.hero{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:center;margin-bottom:32px;}
+@media(max-width:800px){.hero{grid-template-columns:1fr;}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,66px);font-weight:300;line-height:0.9;}
 .hero h1 em{color:#D4AF37;font-style:italic;}
-.hero p{margin-top:14px;max-width:460px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;}
-
-.atelier{display:grid;grid-template-columns:1.1fr 0.9fr;gap:16px;margin-bottom:32px;}
-@media(max-width:750px){.atelier{grid-template-columns:1fr;}}
-.blueprint{border:1px solid rgba(212,175,55,0.18);padding:24px 22px;background:linear-gradient(180deg,rgba(212,175,55,0.06),rgba(255,255,255,0.01));position:relative;}
-.blueprint::before{content:'';position:absolute;top:12px;right:12px;width:24px;height:24px;border-top:1px solid rgba(212,175,55,0.3);border-right:1px solid rgba(212,175,55,0.3);}
-.bp-head{font-size:9px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;margin-bottom:18px;}
-.bp-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:11px;}
-.bp-row span:last-child{color:rgba(245,242,237,0.5);font-weight:200;}
-.bp-row b{font-weight:400;letter-spacing:1px;}
-.bp-note{margin-top:18px;padding:12px;border:1px dashed rgba(212,175,55,0.2);font-size:11px;line-height:1.6;color:rgba(245,242,237,0.4);font-weight:200;font-style:italic;}
-
-.principles{display:flex;flex-direction:column;gap:12px;}
-.principle{border:1px solid rgba(255,255,255,0.07);padding:18px 20px;background:rgba(255,255,255,0.01);}
-.principle .n{font-size:9px;letter-spacing:3px;color:#D4AF37;margin-bottom:8px;}
-.principle h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:6px;}
-.principle p{font-size:11px;line-height:1.6;color:rgba(245,242,237,0.38);font-weight:200;}
-
-.bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 24px;position:relative;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:20%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
-.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:28px;}
+.hero h1 i{font-style:normal;color:rgba(245,242,237,0.15);font-size:0.6em;vertical-align:super;letter-spacing:0;}
+.week-badge{border:1px solid #D4AF37;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));padding:20px;text-align:center;position:relative;}
+.week-badge::before{content:'';position:absolute;inset:6px;border:1px solid rgba(212,175,55,0.15);pointer-events:none;}
+.big07{font-family:'Cormorant Garamond',serif;font-size:82px;font-weight:300;color:#D4AF37;line-height:0.9;}
+.week-badge .label{font-size:9px;letter-spacing:4px;color:#D4AF37;margin-top:8px;text-transform:uppercase;}
+.week-badge .sub{margin-top:12px;font-size:11px;line-height:1.6;color:rgba(245,242,237,0.4);font-weight:200;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+@media(max-width:600px){.stats{grid-template-columns:1fr;}}
+.stat{border:1px solid rgba(255,255,255,0.06);padding:18px;background:rgba(255,255,255,0.01);}
+.stat .k{font-size:9px;letter-spacing:3px;color:rgba(245,242,237,0.35);text-transform:uppercase;margin-bottom:10px;}
+.stat .v{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;}
+.stat .v em{color:#D4AF37;font-style:italic;font-weight:300;}
+.stat .line{margin-top:10px;height:1px;background:rgba(255,255,255,0.06);position:relative;}
+.stat .line i{position:absolute;left:0;top:0;height:100%;background:#D4AF37;}
+.seal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:28px;}
+.seal-day{border:1px solid rgba(212,175,55,0.18);padding:12px 6px;text-align:center;background:rgba(212,175,55,0.03);}
+.seal-day.done{background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02));border-color:#D4AF37;}
+.seal-day .d{font-size:8px;letter-spacing:2px;color:#D4AF37;}
+.seal-day .t{font-family:'Cormorant Garamond',serif;font-size:12px;margin-top:4px;}
+.seal-day.done .t{color:#D4AF37;}
+.bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 22px;position:relative;}
+.bar i{position:absolute;left:0;top:0;height:100%;width:23.3%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.5);}
+.vault{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px;}
 @media(max-width:700px){.vault{grid-template-columns:repeat(3,1fr);}}
-.card{border:1px solid rgba(255,255,255,0.07);padding:14px 12px;background:rgba(255,255,255,0.01);text-align:center;}
-.card .num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:6px;}
-.card h3{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;}
+.card{border:1px solid rgba(255,255,255,0.07);padding:12px;background:rgba(255,255,255,0.01);text-align:center;}
+.card .num{font-size:8px;letter-spacing:2px;color:#D4AF37;margin-bottom:4px;}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:400;}
 .card.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,0.15);}
-.card.done{opacity:0.5;}
-.card.locked{opacity:0.2;}
+.card.done{opacity:0.45;}
+.card.locked{opacity:0.18;}
 .bottom{display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;opacity:1;text-transform:none;letter-spacing:0;font-style:italic;}
+/* CONFETTI */
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden;}
+.conf{position:absolute;width:8px;height:14px;top:-20px;animation:fall linear forwards;}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg) translateX(0);opacity:1;}100%{transform:translateY(110vh) rotate(720deg) translateX(100px);opacity:0;}}
 </style>
 </head>
 <body>
+<div id="confetti"></div>
 <div class="wrap">
 <div class="top">
-<div class="top-left">@4t_jagga — 30 DAY ARCHIVE — DAY 06 / 30 — ATELIER</div>
+<div class="top-left">@4t_jagga — WEEK ONE COMPLETE — DAY 07 / 30</div>
 <div class="mini-clock">
-<div class="mini-case"><div class="mini-glass">
-<div class="mini-orbit"><div class="mini-planet"></div></div>
-<div class="mini-center">
-<div class="mini-hand mini-h" id="mhH"></div>
-<div class="mini-hand mini-m" id="mhM"></div>
-</div>
-</div></div>
-<div class="time-mini" id="miniTime"><b>00:00</b> PKT</div>
+<div class="mini-case"><div class="mini-glass"><div class="mini-orbit"><div class="mini-planet"></div></div><div class="mini-center"><div class="mini-hand mini-h" id="mhH"></div><div class="mini-hand mini-m" id="mhM"></div></div></div></div>
+<div class="time-mini" id="miniTime"><b>00:00</b> AM</div>
 </div>
 </div>
-
 <div class="hero">
-<h1>The <em>Atelier</em> notes.</h1>
-<p>Where 20% turns into empire. Every day shipped from Lahore. Motors still active — forever clock in corner.</p>
+<div>
+<h1>Week One <em>Done</em> <i>07/30</i></h1>
+<p style="margin-top:16px;max-width:420px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.45);font-weight:200;">Seven days. No zero days. From landing to astronomia to atelier — we built a luxury archive live from Lahore. Motors never stopped.</p>
 </div>
-
-<div class="atelier">
-<div class="blueprint">
-<div class="bp-head">System Blueprint — Day 06</div>
-<div class="bp-row"><span>Project</span><span><b>30 DAY LUXURY WEB</b></span></div>
-<div class="bp-row"><span>Location</span><span>Lahore, PK — 31.5204° N</span></div>
-<div class="bp-row"><span>Time Logged</span><span><b id="logged">6 Days / 144 Hours</b></span></div>
-<div class="bp-row"><span>Completion</span><span><b style="color:#D4AF37">20.0%</b></span></div>
-<div class="bp-row"><span>Next Drop</span><span>DAY 07 — 00:00 PKT</span></div>
-<div class="bp-note">"No zero days. If it's 1%, ship 1%. The vault doesn't accept excuses, only proof." — @4t_jagga</div>
-</div>
-<div class="principles">
-<div class="principle"><div class="n">PRINCIPLE 01</div><h3>Ship Daily.</h3><p>Perfection is a delay tactic. Shipped is luxury.</p></div>
-<div class="principle"><div class="n">PRINCIPLE 02</div><h3>Clock Never Stops.</h3><p>Mini astronomia in header — forever. Time is the product.</p></div>
-<div class="principle"><div class="n">PRINCIPLE 03</div><h3>Keep Vault.</h3><p>Nothing deleted. Archive is the flex.</p></div>
+<div class="week-badge">
+<div class="big07">07</div>
+<div class="label">Days Streak — Gold</div>
+<div class="sub">First week sealed.<br>23.3% empire built.<br>Est. Lahore 2026</div>
 </div>
 </div>
-
+<div class="stats">
+<div class="stat"><div class="k">Time Invested</div><div class="v"><em>168</em> Hours</div><div class="line"><i style="width:23.3%"></i></div></div>
+<div class="stat"><div class="k">Drops Shipped</div><div class="v">07 / 30 <em>Live</em></div><div class="line"><i style="width:23.3%"></i></div></div>
+<div class="stat"><div class="k">Consistency</div><div class="v"><em>100%</em> No Miss</div><div class="line"><i style="width:100%;background:#D4AF37"></i></div></div>
+</div>
+<div class="seal">
+<div class="seal-day done"><div class="d">DAY 01</div><div class="t">✓</div></div>
+<div class="seal-day done"><div class="d">DAY 02</div><div class="t">✓</div></div>
+<div class="seal-day done"><div class="d">DAY 03</div><div class="t">✓</div></div>
+<div class="seal-day done"><div class="d">DAY 04</div><div class="t">✓</div></div>
+<div class="seal-day done"><div class="d">DAY 05</div><div class="t">✓</div></div>
+<div class="seal-day done"><div class="d">DAY 06</div><div class="t">✓</div></div>
+<div class="seal-day done" style="border-color:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.2)"><div class="d">DAY 07</div><div class="t" style="color:#D4AF37">★</div></div>
+</div>
 <div class="bar"><i></i></div>
-
 <div class="vault">
 <div class="card done"><div class="num">DAY 01</div><h3>Landing</h3></div>
 <div class="card done"><div class="num">DAY 02</div><h3>Code</h3></div>
 <div class="card done"><div class="num">DAY 03</div><h3>Exec</h3></div>
 <div class="card done"><div class="num">DAY 04</div><h3>Hour</h3></div>
 <div class="card done"><div class="num">DAY 05</div><h3>Astro</h3></div>
-<div class="card active"><div class="num">DAY 06</div><h3>Atelier</h3></div>
-<div class="card locked"><div class="num">DAY 07</div><h3>Locked</h3></div>
+<div class="card done"><div class="num">DAY 06</div><h3>Atelier</h3></div>
+<div class="card active"><div class="num">DAY 07</div><h3>Week One</h3></div>
 <div class="card locked"><div class="num">DAY 08</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 09</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 10</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 20</div><h3>Locked</h3></div>
 <div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
-
-<div class="bottom"><span>EST. LAHORE 2026 — 20% BUILT</span><span class="sig">@4t_jagga</span></div>
+<div class="bottom"><span>EST. LAHORE 2026 — WEEK ONE SEALED</span><span class="sig">@4t_jagga</span></div>
 </div>
 <script>
+// MINI CLOCK
 function upd(){
 const now=new Date();
 const pk=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
-const s=pk.getSeconds(), m=pk.getMinutes(), h=pk.getHours()%12;
+const m=pk.getMinutes(), h=pk.getHours()%12;
 const mh=document.getElementById('mhH'), mm=document.getElementById('mhM');
 if(mh) mh.style.transform=`translateX(-50%) rotate(${h*30 + m*0.5}deg)`;
 if(mm) mm.style.transform=`translateX(-50%) rotate(${m*6}deg)`;
@@ -130,6 +132,33 @@ const el=document.getElementById('miniTime');
 if(el) el.innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap}`;
 }
 setInterval(upd,1000);upd();
+
+// GOAT CELEBRATION CONFETTI
+function launchConfetti(){
+const container=document.getElementById('confetti');
+const colors=['#D4AF37','#FFD700','#FFF8DC','#B8860B','#F5F2ED','#FFA500'];
+for(let i=0;i<150;i++){
+const conf=document.createElement('div');
+conf.className='conf';
+conf.style.left=Math.random()*100+'vw';
+conf.style.background=colors[Math.floor(Math.random()*colors.length)];
+conf.style.animationDuration=(2+Math.random()*3)+'s';
+conf.style.animationDelay=(Math.random()*0.5)+'s';
+conf.style.transform=`rotate(${Math.random()*360}deg)`;
+conf.style.width=(6+Math.random()*8)+'px';
+conf.style.height=(8+Math.random()*12)+'px';
+conf.style.borderRadius=Math.random()>0.5?'2px':'50%';
+container.appendChild(conf);
+setTimeout(()=>conf.remove(),5000);
+}
+}
+window.addEventListener('load',()=>{
+launchConfetti();
+setTimeout(launchConfetti,600);
+setTimeout(launchConfetti,1200);
+});
+// also on click for fun
+document.addEventListener('click',launchConfetti);
 </script>
 </body>
 </html>
