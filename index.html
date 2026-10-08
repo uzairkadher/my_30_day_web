@@ -3,88 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@4t_jagga — DAY 04 / GOLDEN HOUR</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@200;300;400&display=swap" rel="stylesheet">
+<title>@4t_jagga — DAY 05 / ASTRONOMIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@200;300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#070707;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
-.wrap{width:100%;max-width:900px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(120% 120% at 20% 10%,rgba(212,175,55,0.08),transparent 40%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));padding:48px;}
-@media(max-width:600px){.wrap{padding:30px 20px;}}
-.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:40px;}
-.clock{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;}
-@media(max-width:700px){.clock{grid-template-columns:1fr;}}
-.time-box{border:1px solid rgba(255,255,255,0.07);padding:28px;}
-.label{font-size:9px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:18px;}
-.big-time{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,72px);font-weight:300;line-height:0.9;}
-.big-time span{color:#D4AF37;}
-.small{margin-top:10px;font-size:12px;color:rgba(245,242,237,0.45);font-weight:200;letter-spacing:1px;}
-.timer{display:flex;align-items:center;gap:18px;}
-.circle{width:92px;height:92px;border:1px solid rgba(212,175,55,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;color:#D4AF37;position:relative;}
-.circle::after{content:'';position:absolute;inset:-6px;border:1px solid rgba(212,175,55,0.12);border-radius:50%;}
-.timer-info h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;}
-.timer-info p{font-size:12px;color:rgba(245,242,237,0.5);margin-top:4px;font-weight:200;}
-.bar{height:1px;background:rgba(212,175,55,0.12);margin:36px 0;position:relative;overflow:hidden;}
-.bar i{position:absolute;left:0;top:0;height:100%;width:13%;background:#D4AF37;box-shadow:0 0 12px rgba(212,175,55,0.6);}
-.quote{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,3vw,24px);font-weight:300;line-height:1.4;color:rgba(245,242,237,0.7);max-width:600px;}
-.quote em{color:#D4AF37;font-style:italic;}
-.bottom{margin-top:40px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;}
+body{min-height:100vh;background:#040508;color:#F5F2ED;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
+.wrap{width:100%;max-width:980px;border:1px solid rgba(212,175,55,0.15);background:radial-gradient(100% 100% at 50% 0%,rgba(15,40,80,0.25),transparent 50%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.002));padding:48px;}
+@media(max-width:600px){.wrap{padding:28px 18px;}}
+.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:4px;opacity:0.4;text-transform:uppercase;margin-bottom:24px;}
+.hero{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:center;margin-bottom:40px;}
+@media(max-width:800px){.hero{grid-template-columns:1fr;}.watch-side{order:-1;}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,66px);font-weight:300;line-height:0.9;}
+.hero h1 em{color:#D4AF37;font-style:italic;}
+.hero p{margin-top:16px;max-width:420px;font-size:12px;line-height:1.8;color:rgba(245,242,237,0.5);font-weight:200;}
+.watch-side{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.case{width:290px;height:290px;border-radius:50%;background:linear-gradient(145deg,#2a2a2e,#0a0a0a);padding:7px;box-shadow:0 0 0 1px rgba(255,255,255,0.1),0 20px 60px rgba(0,0,0,0.8),0 0 80px rgba(20,60,140,0.25);position:relative;}
+.glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#0a1430 0%,#050a1a 35%,#02040a 70%);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 40% 70%,#fff,transparent),radial-gradient(1px 1px at 80% 20%,#fff,transparent);opacity:0.35;}
+.orbit{position:absolute;left:50%;top:50%;transform-origin:center;border:1px solid rgba(255,255,255,0.04);border-radius:50%;}
+.orbit1{width:234px;height:234px;margin:-117px 0 0 -117px;animation:spin 30s linear infinite;}
+.orbit2{width:192px;height:192px;margin:-96px 0 0 -96px;animation:spin 20s linear infinite reverse;}
+.orbit3{width:148px;height:148px;margin:-74px 0 0 -74px;animation:spin 36s linear infinite;}
+.planet{position:absolute;width:26px;height:26px;border-radius:50%;top:-13px;left:50%;margin-left:-13px;overflow:hidden;box-shadow:0 0 14px rgba(255,255,255,0.35);background:#000;}
+.planet img{width:100%;height:100%;object-fit:cover;display:block;}
+.earth-arm{position:absolute;left:50%;top:50%;width:108px;height:2px;transform-origin:left center;margin-top:-1px;background:linear-gradient(to right,rgba(255,255,255,0.12),transparent);animation:spin 44s linear infinite;}
+.earth-arm .planet{right:-13px;left:auto;top:50%;margin-top:-13px;}
+.center-dial{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#0f2040,#06102a);border:1px solid rgba(212,175,55,0.4);box-shadow:0 0 20px rgba(212,175,55,0.25),inset 0 0 20px rgba(0,0,0,0.8);z-index:10;}
+.hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:2px;}
+.hh{width:3px;height:28px;background:#D4AF37;margin-left:-1.5px;z-index:12;}
+.mm{width:2px;height:38px;background:#F5F2ED;margin-left:-1px;z-index:13;}
+.ss{width:1px;height:44px;background:#D4AF37;opacity:0.7;margin-left:-0.5px;z-index:14;}
+.dot{position:absolute;left:50%;top:50%;width:6px;height:6px;background:#D4AF37;border-radius:50%;transform:translate(-50%,-50%);z-index:15;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.time-txt{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:rgba(245,242,237,0.45);}
+.time-txt b{color:#D4AF37;font-weight:400;}
+.bar{height:1px;background:rgba(255,255,255,0.06);margin:0 0 28px;position:relative;}
+.bar i{position:absolute;left:0;top:0;height:100%;width:16.6%;background:#D4AF37;}
+.vault{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media(max-width:700px){.vault{grid-template-columns:repeat(2,1fr);}}
+.card{border:1px solid rgba(255,255,255,0.07);padding:18px;background:rgba(255,255,255,0.01);}
+.card .num{font-size:9px;letter-spacing:3px;color:#D4AF37;margin-bottom:8px;}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;}
+.card.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,0.12);}
+.card.locked{opacity:0.22;}
+.bottom{margin-top:28px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:3px;opacity:0.3;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
 .sig{font-family:'Cormorant Garamond',serif;font-size:20px;color:#D4AF37;opacity:1;text-transform:none;letter-spacing:0;font-style:italic;}
-.btn{margin-top:24px;display:inline-block;border:1px solid #D4AF37;color:#D4AF37;padding:12px 22px;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;background:transparent;transition:0.3s;}
-.btn:hover{background:#D4AF37;color:#000;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><span>@4t_jagga — 30 DAY CHALLENGE</span><span>DAY 04 / 30 — GOLDEN HOUR</span></div>
-
-<div class="clock">
-<div class="time-box">
-<div class="label">Lahore — Current Time</div>
-<div class="big-time" id="liveTime">--:-- <span>--</span></div>
-<div class="small" id="liveDate">Loading...</div>
+<div class="top"><span>@4t_jagga — 30 DAY ARCHIVE</span><span>DAY 05 / 30 — ASTRONOMIA</span></div>
+<div class="hero">
+<div>
+<h1>Astronomia <em>by @4t_jagga.</em></h1>
+<p>Skeleton universe. 8 real planets rotating forever. Time is not told, it is displayed as a cosmos. Built in Lahore.</p>
 </div>
-<div class="time-box">
-<div class="label">Deep Work — Today</div>
-<div class="timer">
-<div class="circle" id="focusMin">90</div>
-<div class="timer-info">
-<h3>Focus Session</h3>
-<p>Golden hour. No phone. Just work.<br>13% of 30-day challenge done.</p>
-<button class="btn" onclick="startFocus()">Start 90 Min Focus</button>
+<div class="watch-side">
+<div class="case"><div class="glass">
+<div class="stars"></div>
+<div class="orbit orbit1">
+<div class="planet"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/240px-Mercury_in_color_-_Prockter07_centered.jpg"></div>
+<div class="planet" style="top:auto;bottom:-13px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/240px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg"></div>
+</div>
+<div class="orbit orbit2">
+<div class="planet"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/240px-Venus-real_color.jpg"></div>
+<div class="planet" style="left:-13px;top:50%;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/240px-Saturn_during_Equinox.jpg"></div>
+<div class="planet" style="top:auto;bottom:-13px;left:20%;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Uranus2.jpg/240px-Uranus2.jpg"></div>
+</div>
+<div class="orbit orbit3">
+<div class="planet"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/240px-OSIRIS_Mars_true_color.jpg"></div>
+<div class="planet" style="top:auto;bottom:-13px;right:10%;left:auto;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/240px-Neptune_Full.jpg"></div>
+</div>
+<div class="earth-arm"><div class="planet"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/240px-The_Earth_seen_from_Apollo_17.jpg"></div></div>
+<div class="center-dial">
+<div class="hand hh" id="hHand"></div>
+<div class="hand mm" id="mHand"></div>
+<div class="hand ss" id="sHand"></div>
+<div class="dot"></div>
+</div>
+</div></div>
+<div class="time-txt" id="digital">--:-- PKT — MOTORS ACTIVE</div>
 </div>
 </div>
-</div>
-</div>
-
 <div class="bar"><i></i></div>
-
-<div class="quote">Time is the only <em>luxury</em> you can't buy back. So we don't waste it — we <em>invest</em> it.</div>
-
-<div class="bottom"><span>EST. LAHORE 2026 — 13% COMPLETE</span><span class="sig">@4t_jagga</span></div>
+<div class="vault">
+<div class="card"><div class="num">DAY 01</div><h3>Landing</h3></div>
+<div class="card"><div class="num">DAY 02</div><h3>The Code</h3></div>
+<div class="card"><div class="num">DAY 03</div><h3>Execution</h3></div>
+<div class="card"><div class="num">DAY 04</div><h3>Golden Hour</h3></div>
+<div class="card active"><div class="num">DAY 05</div><h3>Astronomia</h3></div>
+<div class="card locked"><div class="num">DAY 06</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">DAY 07</div><h3>Locked</h3></div>
+<div class="card locked"><div class="num">DAY 30</div><h3>Empire</h3></div>
 </div>
-
+<div class="bottom"><span>EST. LAHORE 2026 — MOTORS ROTATING FOREVER</span><span class="sig">@4t_jagga</span></div>
+</div>
 <script>
-function updateTime(){
-const now = new Date();
-const opts = {timeZone:'Asia/Karachi', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true};
-const dateOpts = {timeZone:'Asia/Karachi', weekday:'long', day:'numeric', month:'long', year:'numeric'};
-const timeStr = now.toLocaleTimeString('en-US', opts);
-const parts = timeStr.split(' ');
-document.getElementById('liveTime').innerHTML = parts[0] + ' <span>' + parts[1] + '</span>';
-document.getElementById('liveDate').textContent = now.toLocaleDateString('en-US', dateOpts) + ' — PKT';
+function updateClock(){
+const now=new Date();
+const pk=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
+const s=pk.getSeconds(), m=pk.getMinutes(), h=pk.getHours()%12;
+document.getElementById('sHand').style.transform=`translateX(-50%) rotate(${s*6}deg)`;
+document.getElementById('mHand').style.transform=`translateX(-50%) rotate(${m*6 + s*0.1}deg)`;
+document.getElementById('hHand').style.transform=`translateX(-50%) rotate(${h*30 + m*0.5}deg)`;
+let hh=pk.getHours(); let ap=hh>=12?'PM':'AM'; hh=hh%12||12;
+document.getElementById('digital').innerHTML=`<b>${String(hh).padStart(2,'0')}:${String(m).padStart(2,'0')}</b> ${ap} PKT — MOTORS ACTIVE`;
 }
-setInterval(updateTime,1000); updateTime();
-
-let mins=90, interval=null;
-function startFocus(){
-if(interval) return;
-const el=document.getElementById('focusMin');
-interval=setInterval(()=>{
-mins--; el.textContent=mins;
-if(mins<=0){clearInterval(interval); el.textContent='DONE';}
-},60000);
-el.textContent=mins;
-}
+setInterval(updateClock,1000);updateClock();
 </script>
 </body>
 </html>
